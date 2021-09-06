@@ -1,0 +1,81 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace AnalizadorLexico
+{
+    public partial class CrearAutomata : Form
+    {
+        public CrearAutomata()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBox1.Text))
+            {
+                String mensaje = "Introduce el caracter Inferior";
+                _ = MessageBox.Show(mensaje);
+                return;
+            }
+            char cInf = textBox1.Text[0];
+            
+            int id;
+            try
+            {
+                 id = Int32.Parse(textBox3.Text);
+            }
+            catch (FormatException)
+            {
+                String mensaje = "Ingrese un numero en \"ID del AFN\"";
+                _= MessageBox.Show(mensaje);
+                return;
+
+            }
+            foreach(AFN afn in AFN.ConjuntoAFNs)
+            {
+                if (afn.idAFN == id)
+                {
+                    String mensaje = "ID del AFN ya ocupado";
+                    _ = MessageBox.Show(mensaje);
+                    return;
+                }
+            }
+            char aux;
+
+            if (String.IsNullOrEmpty(textBox2.Text))
+            {
+                Program.AgregarNuevoAFN(cInf, id);
+                this.Close();
+            }
+            else
+            {
+                char cSup = textBox2.Text[0];
+                if (cInf > cSup)
+                {
+                    aux = cInf;
+                    cInf = cSup;
+                    cSup = aux;
+                }
+
+                Program.AgregarNuevoAFN(cInf, cSup, id);
+                this.Close();
+            }
+            
+            
+            
+        }
+    }
+}

@@ -16,5 +16,21 @@ namespace AnalizadorLexico
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void basicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void basicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrearAutomata a1 = new CrearAutomata();
+            a1.Show();
+        }
     }
 }
