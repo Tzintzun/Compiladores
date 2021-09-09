@@ -9,3 +9,4 @@ C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\Analizado
 C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.csproj.CoreCompileInputs.cache
 C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.exe
 C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.pdb
+C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.Union.resources

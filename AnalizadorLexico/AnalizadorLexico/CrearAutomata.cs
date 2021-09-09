@@ -58,7 +58,7 @@ namespace AnalizadorLexico
             if (String.IsNullOrEmpty(textBox2.Text))
             {
                 Program.AgregarNuevoAFN(cInf, id);
-                this.Close();
+                this.Mensaje("AFN Creado");
             }
             else
             {
@@ -71,11 +71,35 @@ namespace AnalizadorLexico
                 }
 
                 Program.AgregarNuevoAFN(cInf, cSup, id);
-                this.Close();
+                this.Mensaje("AFN Creado");
+                
             }
             
             
             
+        }
+
+        private void Mensaje(String mensaje)
+        {
+            this.label4.Text = mensaje;
+            this.label4.ForeColor = Color.Green;
+            this.label4.BackColor = Color.FromArgb(125, 255, 125);
+            this.label4.Visible = true;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            this.label4.Visible = false;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            this.label4.Visible = false;
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            this.label4.Visible = false;
         }
     }
 }
