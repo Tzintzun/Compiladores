@@ -53,6 +53,7 @@
     <Compile Include="CerraduraPos.Designer.cs">
       <DependentUpon>CerraduraPos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClaseAFD.cs" />
     <Compile Include="Concatenacion.cs">
       <SubType>Form</SubType>
     </Compile>

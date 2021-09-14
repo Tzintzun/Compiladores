@@ -6,6 +6,24 @@ using System.Threading.Tasks;
 
 namespace AnalizadorLexico
 {
+    public class ConjIj
+    {
+        public int j;
+        public HashSet<Estado> ConjI;
+        public int[] TransicionesAFD;
+
+        public ConjIj(int CardAlf)
+        {
+            j = -1;
+            ConjI = new HashSet<Estado>();
+            ConjI.Clear();
+            TransicionesAFD = new int[CardAlf + 1];
+            for (int k = 0; k <= CardAlf; k++)
+            {
+                TransicionesAFD[k] = -1;
+            }
+        }
+    }
     class AFN
     {
         public static HashSet<AFN> ConjuntoAFNs = new HashSet<AFN>();
@@ -295,6 +313,144 @@ namespace AnalizadorLexico
             C = CerraduraEspsilon(Mover(edos, s)) ;
 
             return C;
+        }
+
+        private int IndiceCaracter(char[] ArregloAlfabeto, char c)
+        {
+            int i;
+            for (i = 0; i < ArregloAlfabeto.Length; i++)
+            {
+                if (ArregloAlfabeto[i] == c)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public AFD ConvAFNaAFD()
+        {
+            int CardAlfabeto, numEdosAFD;
+            int i, j, r;
+            char[] ArrAlfabeto;
+            ConjIj Ij, Ik;
+            bool existe;
+
+            HashSet<Estado> ConjAux = new HashSet<Estado>();
+            HashSet<ConjIj> EdosAFD = new HashSet<ConjIj>();
+            Queue<ConjIj> EdosSinAnalizar = new Queue<ConjIj>();
+
+            EdosAFD.Clear();
+            EdosSinAnalizar.Clear();
+
+            CardAlfabeto = alfabeto.Count;
+            ArrAlfabeto = new char[CardAlfabeto];
+            i = 0;
+            foreach (char c in alfabeto)
+                ArrAlfabeto[i++] = c;
+
+            j = 0;  //contador para los edos del AFD
+            Ij = new ConjIj(CardAlfabeto)
+            {
+                ConjI = CerraduraEspsilon(this.estadoInit),
+                j = j
+            };
+            EdosAFD.Add(Ij);
+            EdosSinAnalizar.Enqueue(Ij);
+            j++;
+            while (EdosSinAnalizar.Count != 0)
+            {
+                Ij = EdosSinAnalizar.Dequeue();
+                //calcular el Ir_A del Ij con c/simbolo del alfabeto
+                foreach (char c in ArrAlfabeto)
+                {
+                    Ik = new ConjIj(CardAlfabeto)
+                    {
+                        ConjI = Ir_A(Ij.ConjI, c)
+                    };
+                    if (Ik.ConjI.Count == 0)
+                        continue;
+
+                    existe = false;
+                    foreach (ConjIj I in EdosAFD)
+                    {
+                        if (I.ConjI.SetEquals(Ik.ConjI))
+                        {
+                            existe = true;
+
+                            r = IndiceCaracter(ArrAlfabeto, c);
+                            Ij.TransicionesAFD[r] = I.j;
+                            break;
+                        }
+                    }
+
+                    if (!existe)
+                    {
+                        Ik.j = j;
+                        r = IndiceCaracter(ArrAlfabeto, c);
+                        Ij.TransicionesAFD[r] = Ik.j;
+                        EdosAFD.Add(Ik);
+                        EdosSinAnalizar.Enqueue(Ik);
+                        j++;
+                    }
+                }
+            }
+            numEdosAFD = j;
+
+            foreach (ConjIj I in EdosAFD)
+            {
+                ConjAux.Clear();
+                ConjAux.UnionWith(I.ConjI);
+                ConjAux.IntersectWith(this.EstadosAcept);
+                if (ConjAux.Count != 0)
+                {
+                    foreach (Estado EdoAcept in ConjAux)
+                    {
+                        I.TransicionesAFD[CardAlfabeto] = EdoAcept.Token;
+                        break;
+                    }
+                }
+                else
+                {
+                    I.TransicionesAFD[CardAlfabeto] = -1;
+                }
+            }
+            AFD AutFD = new AFD
+            {
+                CardAlfabeto = CardAlfabeto
+            };
+
+            AutFD.TablaAFD = new int[EdosAFD.Count, 257];
+            for (i = 0; i < EdosAFD.Count; i++)
+            {
+                for (j = 0; j < 257; j++)
+                {
+                    AutFD.TablaAFD[i, j] = -1;
+                }
+            }
+
+            AutFD.ArrAlfabeto = new char[AutFD.CardAlfabeto];
+            i = 0;
+            foreach (char c in ArrAlfabeto)
+                AutFD.ArrAlfabeto[i++] = c;
+
+            AutFD.NumEstados = numEdosAFD;
+            AutFD.TransicionesAFD = new int[EdosAFD.Count, CardAlfabeto + 1];
+
+            foreach (ConjIj I in EdosAFD)
+            {
+                for (int columna = 0; columna <= CardAlfabeto; columna++)
+                {
+                    AutFD.TransicionesAFD[I.j, columna] = I.TransicionesAFD[columna];
+                    if (columna != CardAlfabeto)
+                        AutFD.TablaAFD[I.j, AutFD.ArrAlfabeto[columna]] = I.TransicionesAFD[columna];
+                    else
+                        AutFD.TablaAFD[I.j, 256] = I.TransicionesAFD[columna];
+                }
+            }
+
+            AutFD.NumEstados = EdosAFD.Count;
+            return AutFD;
         }
 
 
