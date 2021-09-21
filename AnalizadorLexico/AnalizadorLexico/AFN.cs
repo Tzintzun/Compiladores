@@ -29,7 +29,7 @@ namespace AnalizadorLexico
         public static HashSet<AFN> ConjuntoAFNs = new HashSet<AFN>();
         Estado estadoInit;
         HashSet<Estado> EstadosAFN = new HashSet<Estado>();
-        HashSet<Estado> EstadosAcept = new HashSet<Estado>();
+        public HashSet<Estado> EstadosAcept = new HashSet<Estado>();
         HashSet<char> alfabeto = new HashSet<char>();
 
         bool SeAgregaAFNUnionLexico;
@@ -313,6 +313,24 @@ namespace AnalizadorLexico
             C = CerraduraEspsilon(Mover(edos, s)) ;
 
             return C;
+        }
+
+        public static AFN UnionLexica(int id,HashSet<AFN> afns)
+        {
+            Estado inicial = new Estado();
+            AFN analizador = new AFN();
+            analizador.idAFN = id;
+            foreach(AFN afn in afns)
+            {
+                inicial.Trans.Add(new Transicion(SimbolosEspeciales.Epsilon,afn.estadoInit));
+                analizador.EstadosAcept.UnionWith(afn.EstadosAcept);
+                analizador.EstadosAFN.UnionWith(afn.EstadosAFN);
+                analizador.alfabeto.UnionWith(afn.alfabeto);
+            }
+            analizador.estadoInit = inicial;
+            _ = AFN.ConjuntoAFNs.Add(analizador);
+            return analizador;
+            
         }
 
         private int IndiceCaracter(char[] ArregloAlfabeto, char c)

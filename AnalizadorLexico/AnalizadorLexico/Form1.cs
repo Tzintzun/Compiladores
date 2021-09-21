@@ -53,5 +53,35 @@ namespace AnalizadorLexico
 
             fh.Show();
         }
+
+        private void opcionalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormhija(new Opcional());
+        }
+
+        private void cerraduraToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormhija(new CrerraduraKleen());
+        }
+
+        private void cerraduraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormhija(new CerraduraPos());
+        }
+
+        private void concatenacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormhija(new Concatenacion());
+        }
+
+        private void unirAFNsParaAnalizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormhija(new UnirAFNs());
+        }
+
+        private void convertirAFNAAFDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormhija(new ConversorAFNAFD());
+        }
     }
 }

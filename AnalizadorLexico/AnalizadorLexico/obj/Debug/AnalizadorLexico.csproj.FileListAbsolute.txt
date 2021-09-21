@@ -26,3 +26,9 @@ C:\Users\Diana Paola\Documents\C#\Proyecto compilador\Compiladores\AnalizadorLex
 C:\Users\Diana Paola\Documents\C#\Proyecto compilador\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.csproj.CoreCompileInputs.cache
 C:\Users\Diana Paola\Documents\C#\Proyecto compilador\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.exe
 C:\Users\Diana Paola\Documents\C#\Proyecto compilador\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.pdb
+C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.CerraduraPos.resources
+C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.Concatenacion.resources
+C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.CrerraduraKleen.resources
+C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.Opcional.resources
+C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.UnirAFNs.resources
+C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.ConversorAFNAFD.resources

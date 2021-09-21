@@ -60,6 +60,12 @@
     <Compile Include="Concatenacion.Designer.cs">
       <DependentUpon>Concatenacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConversorAFNAFD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConversorAFNAFD.Designer.cs">
+      <DependentUpon>ConversorAFNAFD.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrearAutomata.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,11 +101,20 @@
     <Compile Include="Union.Designer.cs">
       <DependentUpon>Union.cs</DependentUpon>
     </Compile>
+    <Compile Include="UnirAFNs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnirAFNs.Designer.cs">
+      <DependentUpon>UnirAFNs.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CerraduraPos.resx">
       <DependentUpon>CerraduraPos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Concatenacion.resx">
       <DependentUpon>Concatenacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConversorAFNAFD.resx">
+      <DependentUpon>ConversorAFNAFD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearAutomata.resx">
       <DependentUpon>CrearAutomata.cs</DependentUpon>
@@ -124,6 +139,9 @@
     </Compile>
     <EmbeddedResource Include="Union.resx">
       <DependentUpon>Union.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnirAFNs.resx">
+      <DependentUpon>UnirAFNs.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
