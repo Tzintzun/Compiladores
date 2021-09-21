@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AFN.cs" />
+    <Compile Include="AnalizLexico.cs" />
     <Compile Include="CerraduraPos.cs">
       <SubType>Form</SubType>
     </Compile>
