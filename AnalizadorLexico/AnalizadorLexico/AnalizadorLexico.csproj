@@ -86,6 +86,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GuardarAFD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuardarAFD.Designer.cs">
+      <DependentUpon>GuardarAFD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Opcional.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuardarAFD.resx">
+      <DependentUpon>GuardarAFD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Opcional.resx">
       <DependentUpon>Opcional.cs</DependentUpon>

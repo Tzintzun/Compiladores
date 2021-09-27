@@ -32,3 +32,4 @@ C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\Analizado
 C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.Opcional.resources
 C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.UnirAFNs.resources
 C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.ConversorAFNAFD.resources
+C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.GuardarAFD.resources

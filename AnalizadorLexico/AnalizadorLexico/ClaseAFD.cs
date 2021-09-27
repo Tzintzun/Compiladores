@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace AnalizadorLexico
 {
+    [Serializable]
     class TransEdoAFD
     {
         public int IdEdo;
@@ -14,7 +17,8 @@ namespace AnalizadorLexico
     }
     public class AFD
     {
-        public static HashSet<AFD> ConjAFDs = new HashSet<AFD>();
+        
+        public static HashSet<AFD> conjAFDs = new HashSet<AFD>();
         public int NumEstados;
         public int CardAlfabeto;
         public char[] ArrAlfabeto;
@@ -25,6 +29,8 @@ namespace AnalizadorLexico
         {
             IdAFD = -1;
         }
+
+        
         public AFD(int NumeroDeEstados, int IdAutFD)
         {
             TablaAFD = new int[NumeroDeEstados, 257];
@@ -39,6 +45,9 @@ namespace AnalizadorLexico
             IdAFD = IdAutFD;
             AFD.ConjAFDs.Add(this);
         }
+
+        public static HashSet<AFD> ConjAFDs { get => conjAFDs; set => conjAFDs = value; }
+        
 
         public void GuardarADFenArchivo(string NombreArchivo)
         {
@@ -90,5 +99,28 @@ namespace AnalizadorLexico
             AFD.ConjAFDs.Add(this);
             return;
         }
+
+
+        public int Guardar()
+        {
+            try
+            {
+                SaveFileDialog filechooser = new SaveFileDialog();
+
+                if (filechooser.ShowDialog() == DialogResult.OK)
+                {
+                    GuardarADFenArchivo(filechooser.FileName);
+                    return 0;
+                }
+
+            }
+            catch (Exception e)
+            {
+                return 1;
+            }
+            return 0;
+        }
+
+
     }
 }

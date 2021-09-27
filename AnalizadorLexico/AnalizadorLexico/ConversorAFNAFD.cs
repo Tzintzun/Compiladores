@@ -71,14 +71,17 @@ namespace AnalizadorLexico
                 }
             }
             afdResultado = afnAConvertir.ConvAFNaAFD();
-
-            
+            afdResultado.IdAFD = id;
+            AFD.conjAFDs.Add(afdResultado);
             this.afdActual = afdResultado;
+
             this.mostrarAFD();
         }
 
         public void mostrarAFD()
         {
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
             this.dataGridView1.ColumnCount = 257;
             for(int i=0;i<256; i++)
             {
@@ -99,5 +102,13 @@ namespace AnalizadorLexico
                 
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GuardarAFD guardado = new GuardarAFD();
+            guardado.Show();
+        }
+
+        
     }
 }

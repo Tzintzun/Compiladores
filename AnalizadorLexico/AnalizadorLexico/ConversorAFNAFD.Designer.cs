@@ -42,9 +42,9 @@ namespace AnalizadorLexico
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 149);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 132);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(770, 289);
+            this.dataGridView1.Size = new System.Drawing.Size(770, 260);
             this.dataGridView1.TabIndex = 0;
             // 
             // comboBox1
@@ -93,12 +93,13 @@ namespace AnalizadorLexico
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(221, 94);
+            this.button2.Location = new System.Drawing.Point(223, 86);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 40);
             this.button2.TabIndex = 6;
             this.button2.Text = "Guardar AFD";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ConversorAFNAFD
             // 
