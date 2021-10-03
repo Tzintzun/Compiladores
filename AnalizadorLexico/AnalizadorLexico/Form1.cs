@@ -83,5 +83,10 @@ namespace AnalizadorLexico
         {
             this.AbrirFormhija(new ConversorAFNAFD());
         }
+
+        private void pruebaAnalizadorLexicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormhija(new pAnalizadorLexico());
+        }
     }
 }

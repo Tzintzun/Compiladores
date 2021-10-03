@@ -86,6 +86,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="pAnalizadorLexico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pAnalizadorLexico.Designer.cs">
+      <DependentUpon>pAnalizadorLexico.cs</DependentUpon>
+    </Compile>
     <Compile Include="GuardarAFD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pAnalizadorLexico.resx">
+      <DependentUpon>pAnalizadorLexico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuardarAFD.resx">
       <DependentUpon>GuardarAFD.cs</DependentUpon>

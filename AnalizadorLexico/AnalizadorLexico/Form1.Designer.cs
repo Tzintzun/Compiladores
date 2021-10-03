@@ -42,21 +42,24 @@ namespace AnalizadorLexico
             this.unirAFNsParaAnalizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.convertirAFNAAFDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pruebaAnalizadorLexicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.basicoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -70,83 +73,93 @@ namespace AnalizadorLexico
             this.cerraduraToolStripMenuItem1,
             this.opcionalToolStripMenuItem,
             this.unirAFNsParaAnalizarToolStripMenuItem,
-            this.convertirAFNAAFDToolStripMenuItem});
+            this.convertirAFNAAFDToolStripMenuItem,
+            this.pruebaAnalizadorLexicoToolStripMenuItem});
             this.basicoToolStripMenuItem.Name = "basicoToolStripMenuItem";
-            this.basicoToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.basicoToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.basicoToolStripMenuItem.Text = "Acciones";
             this.basicoToolStripMenuItem.Click += new System.EventHandler(this.basicoToolStripMenuItem_Click);
             // 
             // basicaToolStripMenuItem
             // 
             this.basicaToolStripMenuItem.Name = "basicaToolStripMenuItem";
-            this.basicaToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.basicaToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.basicaToolStripMenuItem.Text = "Basica";
             this.basicaToolStripMenuItem.Click += new System.EventHandler(this.basicaToolStripMenuItem_Click);
             // 
             // unionToolStripMenuItem
             // 
             this.unionToolStripMenuItem.Name = "unionToolStripMenuItem";
-            this.unionToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.unionToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.unionToolStripMenuItem.Text = "Union";
             this.unionToolStripMenuItem.Click += new System.EventHandler(this.unionToolStripMenuItem_Click);
             // 
             // concatenacionToolStripMenuItem
             // 
             this.concatenacionToolStripMenuItem.Name = "concatenacionToolStripMenuItem";
-            this.concatenacionToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.concatenacionToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.concatenacionToolStripMenuItem.Text = "Concatenacion";
             this.concatenacionToolStripMenuItem.Click += new System.EventHandler(this.concatenacionToolStripMenuItem_Click);
             // 
             // cerraduraToolStripMenuItem
             // 
             this.cerraduraToolStripMenuItem.Name = "cerraduraToolStripMenuItem";
-            this.cerraduraToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.cerraduraToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.cerraduraToolStripMenuItem.Text = "Cerradura +";
             this.cerraduraToolStripMenuItem.Click += new System.EventHandler(this.cerraduraToolStripMenuItem_Click);
             // 
             // cerraduraToolStripMenuItem1
             // 
             this.cerraduraToolStripMenuItem1.Name = "cerraduraToolStripMenuItem1";
-            this.cerraduraToolStripMenuItem1.Size = new System.Drawing.Size(199, 22);
+            this.cerraduraToolStripMenuItem1.Size = new System.Drawing.Size(260, 26);
             this.cerraduraToolStripMenuItem1.Text = "Cerradura *";
             this.cerraduraToolStripMenuItem1.Click += new System.EventHandler(this.cerraduraToolStripMenuItem1_Click);
             // 
             // opcionalToolStripMenuItem
             // 
             this.opcionalToolStripMenuItem.Name = "opcionalToolStripMenuItem";
-            this.opcionalToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.opcionalToolStripMenuItem.Text = "opcional";
+            this.opcionalToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.opcionalToolStripMenuItem.Text = "Opcional";
             this.opcionalToolStripMenuItem.Click += new System.EventHandler(this.opcionalToolStripMenuItem_Click);
             // 
             // unirAFNsParaAnalizarToolStripMenuItem
             // 
             this.unirAFNsParaAnalizarToolStripMenuItem.Name = "unirAFNsParaAnalizarToolStripMenuItem";
-            this.unirAFNsParaAnalizarToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.unirAFNsParaAnalizarToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.unirAFNsParaAnalizarToolStripMenuItem.Text = "Unir AFN´s para analizar";
             this.unirAFNsParaAnalizarToolStripMenuItem.Click += new System.EventHandler(this.unirAFNsParaAnalizarToolStripMenuItem_Click);
             // 
             // convertirAFNAAFDToolStripMenuItem
             // 
             this.convertirAFNAAFDToolStripMenuItem.Name = "convertirAFNAAFDToolStripMenuItem";
-            this.convertirAFNAAFDToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.convertirAFNAAFDToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.convertirAFNAAFDToolStripMenuItem.Text = "Convertir AFN a AFD";
             this.convertirAFNAAFDToolStripMenuItem.Click += new System.EventHandler(this.convertirAFNAAFDToolStripMenuItem_Click);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Location = new System.Drawing.Point(0, 33);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 424);
+            this.panel1.Size = new System.Drawing.Size(1067, 522);
             this.panel1.TabIndex = 2;
+            // 
+            // pruebaAnalizadorLexicoToolStripMenuItem
+            // 
+            this.pruebaAnalizadorLexicoToolStripMenuItem.Name = "pruebaAnalizadorLexicoToolStripMenuItem";
+            this.pruebaAnalizadorLexicoToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.pruebaAnalizadorLexicoToolStripMenuItem.Text = "Prueba Analizador Lexico";
+            this.pruebaAnalizadorLexicoToolStripMenuItem.Click += new System.EventHandler(this.pruebaAnalizadorLexicoToolStripMenuItem_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -171,6 +184,7 @@ namespace AnalizadorLexico
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem unirAFNsParaAnalizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem convertirAFNAAFDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pruebaAnalizadorLexicoToolStripMenuItem;
     }
 }
 
