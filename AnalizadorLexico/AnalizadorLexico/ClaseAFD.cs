@@ -61,9 +61,9 @@ namespace AnalizadorLexico
                     {
                         writer.Write(TablaAFD[i, j]);
                         if (j != 256)
-                            writer.WriteLine(";");
+                            writer.Write(";");
                     }
-                    writer.WriteLine();
+                    writer.WriteLine("");
                 }
                 writer.Close();
             }
@@ -87,8 +87,11 @@ namespace AnalizadorLexico
                 {
                     Renglon = reader.ReadLine();
                     ValoresRenglon = Renglon.Split(';');
+
                     for (k = 0; k < 257; k++)
+                    {
                         this.TablaAFD[IdEdo, k] = int.Parse(ValoresRenglon[k]);
+                    }
 
                     IdEdo++;
                 }

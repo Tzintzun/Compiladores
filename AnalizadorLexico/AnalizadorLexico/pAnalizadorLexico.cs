@@ -29,8 +29,32 @@ namespace AnalizadorLexico
             {
                 string path_file = openFileDialog1.FileName;
                 string[] parts_parh_file = path_file.Split('\\');
-                lbl_file_name.Text = parts_parh_file[parts_parh_file.Length - 1];
+                string name_file = parts_parh_file[parts_parh_file.Length - 1];
+                lbl_file_name.Text = name_file;
                 lbl_file_name.Visible = true;
+
+                if(txt_afd_id.Text != null && txt_afd_id.Text != "")
+                {
+                    AFD afd_lectura = new AFD();
+
+                    int afd_id;
+                    if(Int32.TryParse(txt_afd_id.Text, out afd_id))
+                    {
+                        afd_lectura.LeerAFDdeArchivo(path_file, afd_id);
+                        this.comboBox1.Items.Clear();
+                        MostrarAFDs();
+                    }
+                    else
+                    {
+                        Console.WriteLine("The AFD ID is invalid");
+                        MessageBox.Show("El id asignado para el AFD es invalido");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Textbox for AFD ID is empty");
+                    MessageBox.Show("Por favor inserte el id del AFD");
+                }
             }
             else
             {

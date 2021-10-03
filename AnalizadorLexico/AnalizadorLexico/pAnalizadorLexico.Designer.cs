@@ -32,7 +32,7 @@ namespace AnalizadorLexico
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_afd_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@ namespace AnalizadorLexico
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lbl_file_name);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txt_afd_id);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(38, 32);
@@ -80,12 +80,12 @@ namespace AnalizadorLexico
             this.groupBox1.Text = "Cargar AFD desde archivo";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // textBox1
+            // txt_afd_id
             // 
-            this.textBox1.Location = new System.Drawing.Point(107, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 3;
+            this.txt_afd_id.Location = new System.Drawing.Point(107, 24);
+            this.txt_afd_id.Name = "txt_afd_id";
+            this.txt_afd_id.Size = new System.Drawing.Size(100, 22);
+            this.txt_afd_id.TabIndex = 3;
             // 
             // label1
             // 
@@ -195,7 +195,7 @@ namespace AnalizadorLexico
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_afd_id;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
