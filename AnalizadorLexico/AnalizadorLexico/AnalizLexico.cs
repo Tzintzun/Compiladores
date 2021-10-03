@@ -63,7 +63,7 @@ namespace AnalizadorLexico
             IndiceCaracterActual = 0;
             token = -1;
             Pila.Clear();
-            //AutomataFD.LeerAFDdeArchivo(FileAFD, IdAFD);
+            AutomataFD.LeerAFDdeArchivo(FileAFD, IdAFD);
         }
 
         public AnalizLexico(string sigma, AFD AutFD)
