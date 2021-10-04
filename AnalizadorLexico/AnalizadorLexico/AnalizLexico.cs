@@ -15,7 +15,7 @@ namespace AnalizadorLexico
         int IniLexema, FinLexema, IndiceCaracterActual;
         char CaracterActual;
         Stack<int> Pila = new Stack<int>();
-        AFD AutomataFD;
+        public AFD AutomataFD;
 
         public AnalizLexico()
         {

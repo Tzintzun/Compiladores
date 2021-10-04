@@ -32,16 +32,16 @@ namespace AnalizadorLexico
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_file_name = new System.Windows.Forms.Label();
             this.txt_afd_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_cadena = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.lbl_file_name = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +80,16 @@ namespace AnalizadorLexico
             this.groupBox1.Text = "Cargar AFD desde archivo";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // lbl_file_name
+            // 
+            this.lbl_file_name.AutoSize = true;
+            this.lbl_file_name.Location = new System.Drawing.Point(116, 99);
+            this.lbl_file_name.Name = "lbl_file_name";
+            this.lbl_file_name.Size = new System.Drawing.Size(30, 17);
+            this.lbl_file_name.TabIndex = 4;
+            this.lbl_file_name.Text = "File";
+            this.lbl_file_name.Visible = false;
+            // 
             // txt_afd_id
             // 
             this.txt_afd_id.Location = new System.Drawing.Point(107, 24);
@@ -114,12 +124,13 @@ namespace AnalizadorLexico
             this.label3.TabIndex = 8;
             this.label3.Text = "Cadena a evaluar:";
             // 
-            // textBox2
+            // txt_cadena
             // 
-            this.textBox2.Location = new System.Drawing.Point(256, 235);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(286, 22);
-            this.textBox2.TabIndex = 9;
+            this.txt_cadena.Location = new System.Drawing.Point(256, 235);
+            this.txt_cadena.Name = "txt_cadena";
+            this.txt_cadena.Size = new System.Drawing.Size(286, 22);
+            this.txt_cadena.TabIndex = 9;
+            this.txt_cadena.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button2
             // 
@@ -129,6 +140,7 @@ namespace AnalizadorLexico
             this.button2.TabIndex = 10;
             this.button2.Text = "Analizar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
@@ -137,12 +149,12 @@ namespace AnalizadorLexico
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(517, 170);
+            this.dataGridView1.Size = new System.Drawing.Size(517, 183);
             this.dataGridView1.TabIndex = 11;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(320, 468);
+            this.button3.Location = new System.Drawing.Point(320, 479);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(130, 37);
             this.button3.TabIndex = 12;
@@ -156,16 +168,6 @@ namespace AnalizadorLexico
             this.openFileDialog1.RestoreDirectory = true;
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // lbl_file_name
-            // 
-            this.lbl_file_name.AutoSize = true;
-            this.lbl_file_name.Location = new System.Drawing.Point(116, 99);
-            this.lbl_file_name.Name = "lbl_file_name";
-            this.lbl_file_name.Size = new System.Drawing.Size(30, 17);
-            this.lbl_file_name.TabIndex = 4;
-            this.lbl_file_name.Text = "File";
-            this.lbl_file_name.Visible = false;
-            // 
             // pAnalizadorLexico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -175,7 +177,7 @@ namespace AnalizadorLexico
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_cadena);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -199,7 +201,7 @@ namespace AnalizadorLexico
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_cadena;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button3;

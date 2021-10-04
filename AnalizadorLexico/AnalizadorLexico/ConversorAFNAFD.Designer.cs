@@ -42,34 +42,40 @@ namespace AnalizadorLexico
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 132);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 162);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(770, 260);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1027, 320);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(102, 31);
+            this.comboBox1.Location = new System.Drawing.Point(136, 38);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 34);
+            this.label1.Location = new System.Drawing.Point(16, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.Size = new System.Drawing.Size(110, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "AFN a convertir:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(102, 103);
+            this.button1.Location = new System.Drawing.Point(136, 127);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 3;
             this.button1.Text = "Convertir";
             this.button1.UseVisualStyleBackColor = true;
@@ -78,24 +84,27 @@ namespace AnalizadorLexico
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 61);
+            this.label2.Location = new System.Drawing.Point(20, 75);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "ID AFD";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(102, 61);
+            this.textBox1.Location = new System.Drawing.Point(136, 75);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(54, 20);
+            this.textBox1.Size = new System.Drawing.Size(71, 22);
             this.textBox1.TabIndex = 5;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(223, 86);
+            this.button2.Location = new System.Drawing.Point(297, 106);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 40);
+            this.button2.Size = new System.Drawing.Size(100, 49);
             this.button2.TabIndex = 6;
             this.button2.Text = "Guardar AFD";
             this.button2.UseVisualStyleBackColor = true;
@@ -103,9 +112,9 @@ namespace AnalizadorLexico
             // 
             // ConversorAFNAFD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -114,6 +123,7 @@ namespace AnalizadorLexico
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ConversorAFNAFD";
             this.Text = "ConversorAFNAFD";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
