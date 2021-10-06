@@ -53,3 +53,4 @@ C:\Users\david\Documents\GitHub\Compiladores\AnalizadorLexico\AnalizadorLexico\o
 C:\Users\david\Documents\GitHub\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.exe
 C:\Users\david\Documents\GitHub\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.pdb
 C:\Users\david\Documents\GitHub\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.pAnalizadorLexico.resources
+C:\Users\david\Documents\Visual Studio 2019\Practicas\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.pAnalizadorLexico.resources

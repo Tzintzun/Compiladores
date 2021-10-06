@@ -17,6 +17,11 @@ namespace AnalizadorLexico
         {
             InitializeComponent();
             this.MostrarAFDs();
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
+            this.dataGridView1.ColumnCount = 2;
+            dataGridView1.Columns[0].Name = "Token";
+            dataGridView1.Columns[1].Name = "Lexema";
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -124,43 +129,39 @@ namespace AnalizadorLexico
 
         private void button2_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
             int afd_id = Int32.Parse(this.comboBox1.SelectedItem.ToString());
             foreach (AFD afd in AFD.ConjAFDs)
             {
-                if(afd.IdAFD == afd_id)
+                if (afd.IdAFD == afd_id)
                 {
                     AnalizLexico al = new AnalizLexico(txt_cadena.Text, afd);
-                    int token = al.yylex();
                     this.afd = al.AutomataFD;
-                    mostrarAFD();
+                    int token = al.yylex();
+                    while (token != SimbolosEspeciales.FIN )
+                    {
+                        mostrarAFD(al, token);
+                        
+                        token = al.yylex();
+                    }
+                    mostrarAFD(al, token);
+
                     break;
                 }
             }
         }
 
-        public void mostrarAFD()
+        public void mostrarAFD(AnalizLexico al,int token)
         {
-            dataGridView1.Rows.Clear();
-            dataGridView1.Columns.Clear();
-            this.dataGridView1.ColumnCount = 257;
-            for (int i = 0; i < 256; i++)
-            {
-                dataGridView1.Columns[i].Name = char.ConvertFromUtf32(i).ToString();
-            }
-            dataGridView1.Columns[256].Name = "Token";
-            for (int i = 0; i < this.afd.NumEstados; i++)
-            {
-                dataGridView1.Rows.Add();
-            }
+            
 
-            for (int i = 0; i < this.afd.NumEstados; i++)
-            {
-                for (int j = 0; j < 257; j++)
-                {
-                    this.dataGridView1.Rows[i].Cells[j].Value = this.afd.TablaAFD[i, j];
-                }
+            dataGridView1.Rows.Add();
+            int filas = dataGridView1.Rows.Count;
 
-            }
+            dataGridView1.Rows[filas - 2].Cells[0].Value = token;
+            dataGridView1.Rows[filas - 2].Cells[1].Value = al.Lexema;
+
+            
         }
     }
 }

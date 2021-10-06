@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnalizadorLexico
 {
-    class AnalizLexico
+   public  class AnalizLexico
     {
         int token, EdoActual, EdoTransicion;
         string CadenaSigma;
@@ -123,7 +123,7 @@ namespace AnalizadorLexico
             {
                 IndiceCaracterActual = IniLexema + 1;
                 Lexema = CadenaSigma.Substring(IniLexema, 1);
-                token = 2000;
+                token = 20000;
                 return token;
             }
 
