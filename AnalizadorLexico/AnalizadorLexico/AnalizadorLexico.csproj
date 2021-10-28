@@ -55,6 +55,7 @@
       <DependentUpon>CerraduraPos.cs</DependentUpon>
     </Compile>
     <Compile Include="ClaseAFD.cs" />
+    <Compile Include="EvaluadorExpr.cs" />
     <Compile Include="Concatenacion.cs">
       <SubType>Form</SubType>
     </Compile>
