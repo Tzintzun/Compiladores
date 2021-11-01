@@ -88,5 +88,10 @@ namespace AnalizadorLexico
         {
             this.AbrirFormhija(new pAnalizadorLexico());
         }
+
+        private void calculadoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormhija(new fmrEvaluadorExpresiones());
+        }
     }
 }

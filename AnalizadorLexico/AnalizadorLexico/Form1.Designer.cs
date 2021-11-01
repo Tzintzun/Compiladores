@@ -41,8 +41,11 @@ namespace AnalizadorLexico
             this.opcionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unirAFNsParaAnalizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.convertirAFNAAFDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pruebaAnalizadorLexicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.análisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.descensoRecursivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +59,8 @@ namespace AnalizadorLexico
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.basicoToolStripMenuItem});
+            this.basicoToolStripMenuItem,
+            this.análisisToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
@@ -136,6 +140,13 @@ namespace AnalizadorLexico
             this.convertirAFNAAFDToolStripMenuItem.Text = "Convertir AFN a AFD";
             this.convertirAFNAAFDToolStripMenuItem.Click += new System.EventHandler(this.convertirAFNAAFDToolStripMenuItem_Click);
             // 
+            // pruebaAnalizadorLexicoToolStripMenuItem
+            // 
+            this.pruebaAnalizadorLexicoToolStripMenuItem.Name = "pruebaAnalizadorLexicoToolStripMenuItem";
+            this.pruebaAnalizadorLexicoToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.pruebaAnalizadorLexicoToolStripMenuItem.Text = "Prueba Analizador Lexico";
+            this.pruebaAnalizadorLexicoToolStripMenuItem.Click += new System.EventHandler(this.pruebaAnalizadorLexicoToolStripMenuItem_Click);
+            // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(0, 33);
@@ -144,12 +155,28 @@ namespace AnalizadorLexico
             this.panel1.Size = new System.Drawing.Size(1067, 522);
             this.panel1.TabIndex = 2;
             // 
-            // pruebaAnalizadorLexicoToolStripMenuItem
+            // análisisToolStripMenuItem
             // 
-            this.pruebaAnalizadorLexicoToolStripMenuItem.Name = "pruebaAnalizadorLexicoToolStripMenuItem";
-            this.pruebaAnalizadorLexicoToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.pruebaAnalizadorLexicoToolStripMenuItem.Text = "Prueba Analizador Lexico";
-            this.pruebaAnalizadorLexicoToolStripMenuItem.Click += new System.EventHandler(this.pruebaAnalizadorLexicoToolStripMenuItem_Click);
+            this.análisisToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.descensoRecursivoToolStripMenuItem});
+            this.análisisToolStripMenuItem.Name = "análisisToolStripMenuItem";
+            this.análisisToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.análisisToolStripMenuItem.Text = " Análisis sintáctico";
+            // 
+            // descensoRecursivoToolStripMenuItem
+            // 
+            this.descensoRecursivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calculadoraToolStripMenuItem});
+            this.descensoRecursivoToolStripMenuItem.Name = "descensoRecursivoToolStripMenuItem";
+            this.descensoRecursivoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.descensoRecursivoToolStripMenuItem.Text = "Descenso Recursivo";
+            // 
+            // calculadoraToolStripMenuItem
+            // 
+            this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
+            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.calculadoraToolStripMenuItem.Text = "Calculadora";
+            this.calculadoraToolStripMenuItem.Click += new System.EventHandler(this.calculadoraToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -185,6 +212,9 @@ namespace AnalizadorLexico
         private System.Windows.Forms.ToolStripMenuItem unirAFNsParaAnalizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem convertirAFNAAFDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pruebaAnalizadorLexicoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem análisisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem descensoRecursivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem calculadoraToolStripMenuItem;
     }
 }
 

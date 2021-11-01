@@ -87,6 +87,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmrEvaluadorExpresiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmrEvaluadorExpresiones.Designer.cs">
+      <DependentUpon>fmrEvaluadorExpresiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="pAnalizadorLexico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrerraduraKleen.resx">
       <DependentUpon>CrerraduraKleen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmrEvaluadorExpresiones.resx">
+      <DependentUpon>fmrEvaluadorExpresiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
