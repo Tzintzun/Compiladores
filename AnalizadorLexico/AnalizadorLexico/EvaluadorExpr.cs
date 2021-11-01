@@ -57,7 +57,7 @@ namespace AnalizadorLexico
         bool E(ref float v, ref string Post)
         {
             if (T(ref v, ref Post))
-                if (T(ref v, ref Post))
+                if (Ep(ref v, ref Post))
                     return true;
             return false;
         }

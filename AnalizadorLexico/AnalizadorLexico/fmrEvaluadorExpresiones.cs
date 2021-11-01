@@ -36,6 +36,7 @@ namespace AnalizadorLexico
         private void btn_eval_Click(object sender, EventArgs e)
         {
             string texto = txt_exp.Text;
+            Console.WriteLine(texto);
             Evaluador.setExpresion(texto);
 
             if (Evaluador.IniEval())
