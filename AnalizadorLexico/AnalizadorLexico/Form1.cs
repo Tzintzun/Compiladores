@@ -93,5 +93,10 @@ namespace AnalizadorLexico
         {
             this.AbrirFormhija(new fmrEvaluadorExpresiones());
         }
+
+        private void eRAFNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormhija(new fmrERaAFN());
+        }
     }
 }

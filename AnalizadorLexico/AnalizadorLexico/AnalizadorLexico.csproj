@@ -55,6 +55,7 @@
       <DependentUpon>CerraduraPos.cs</DependentUpon>
     </Compile>
     <Compile Include="ClaseAFD.cs" />
+    <Compile Include="ER_AFN.cs" />
     <Compile Include="EvaluadorExpr.cs" />
     <Compile Include="Concatenacion.cs">
       <SubType>Form</SubType>
@@ -92,6 +93,12 @@
     </Compile>
     <Compile Include="fmrEvaluadorExpresiones.Designer.cs">
       <DependentUpon>fmrEvaluadorExpresiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmrERaAFN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmrERaAFN.Designer.cs">
+      <DependentUpon>fmrERaAFN.cs</DependentUpon>
     </Compile>
     <Compile Include="pAnalizadorLexico.cs">
       <SubType>Form</SubType>
@@ -147,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmrERaAFN.resx">
+      <DependentUpon>fmrERaAFN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pAnalizadorLexico.resx">
       <DependentUpon>pAnalizadorLexico.cs</DependentUpon>

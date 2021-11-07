@@ -139,7 +139,7 @@ namespace AnalizadorLexico
             return this;
         }
 
-        public AFN crerraduraPos()
+        public AFN cerraduraPos()
         {
             Estado e1 = new Estado();
             Estado e2 = new Estado();

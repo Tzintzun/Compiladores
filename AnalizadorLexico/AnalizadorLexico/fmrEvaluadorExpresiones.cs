@@ -94,5 +94,10 @@ namespace AnalizadorLexico
         {
 
         }
+
+        private void txt_exp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

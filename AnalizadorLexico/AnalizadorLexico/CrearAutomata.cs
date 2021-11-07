@@ -31,20 +31,20 @@ namespace AnalizadorLexico
                 return;
             }
             char cInf = textBox1.Text[0];
-            
+
             int id;
             try
             {
-                 id = Int32.Parse(textBox3.Text);
+                id = Int32.Parse(textBox3.Text);
             }
             catch (FormatException)
             {
                 String mensaje = "Ingrese un numero en \"ID del AFN\"";
-                _= MessageBox.Show(mensaje);
+                _ = MessageBox.Show(mensaje);
                 return;
 
             }
-            foreach(AFN afn in AFN.ConjuntoAFNs)
+            foreach (AFN afn in AFN.ConjuntoAFNs)
             {
                 if (afn.idAFN == id)
                 {
@@ -72,11 +72,7 @@ namespace AnalizadorLexico
 
                 Program.AgregarNuevoAFN(cInf, cSup, id);
                 this.Mensaje("AFN Creado");
-                
             }
-            
-            
-            
         }
 
         private void Mensaje(String mensaje)
@@ -99,6 +95,14 @@ namespace AnalizadorLexico
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+            this.label4.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
             this.label4.Visible = false;
         }
     }

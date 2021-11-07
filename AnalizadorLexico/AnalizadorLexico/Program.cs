@@ -102,7 +102,7 @@ namespace AnalizadorLexico
                     break;
                 }
             }
-            a1.crerraduraPos();
+            a1.cerraduraPos();
         }
 
         public static void CerraduraKleen(String afn1)
