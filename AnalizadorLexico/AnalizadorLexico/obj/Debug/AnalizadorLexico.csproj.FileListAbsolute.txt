@@ -60,3 +60,5 @@ C:\Users\Diana Paola\Documents\C#\Proyecto compilador\Compiladores\AnalizadorLex
 C:\Users\Diana Paola\Documents\C#\Proyecto compilador\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.UnirAFNs.resources
 C:\Users\david\Documents\GitHub\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.fmrEvaluadorExpresiones.resources
 C:\Users\david\Documents\GitHub\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.fmrERaAFN.resources
+C:\Users\Diana Paola\Documents\C#\Proyecto compilador\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.fmrEvaluadorExpresiones.resources
+C:\Users\Diana Paola\Documents\C#\Proyecto compilador\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.fmrERaAFN.resources

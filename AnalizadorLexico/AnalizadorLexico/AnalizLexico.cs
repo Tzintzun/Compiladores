@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnalizadorLexico
 {
-   public  class AnalizLexico
+    class AnalizLexico
     {
         int token, EdoActual, EdoTransicion;
         string CadenaSigma;
@@ -38,7 +38,7 @@ namespace AnalizadorLexico
             IndiceCaracterActual = 0;
             token = -1;
             Pila.Clear();
-            
+
             AutomataFD.LeerAFDdeArchivo(FileAFD, IdAFD);
         }
 
@@ -76,6 +76,36 @@ namespace AnalizadorLexico
             token = -1;
             Pila.Clear();
             AutomataFD = AutFD;
+        }
+
+        public ClassEstadoAnalizLexico GetEdoAnalizLexico()
+        {
+            ClassEstadoAnalizLexico EdoActualAnaliz = new ClassEstadoAnalizLexico();
+            EdoActualAnaliz.CaracterActual = CaracterActual;
+            EdoActualAnaliz.EdoActual = EdoActual;
+            EdoActualAnaliz.EdoTransicion = EdoTransicion;
+            EdoActualAnaliz.FinLexema = FinLexema;
+            EdoActualAnaliz.IndiceCaracterActual = IndiceCaracterActual;
+            EdoActualAnaliz.IniLexema = IniLexema;
+            EdoActualAnaliz.Lexema = Lexema;
+            EdoActualAnaliz.PasoPorEdoAcept = PasoPorEdoAcept;
+            EdoActualAnaliz.token = token;
+            EdoActualAnaliz.Pila = Pila;
+            return EdoActualAnaliz;
+        }
+
+        public bool SetEdoAnalizLexico(ClassEstadoAnalizLexico e)
+        {
+            CaracterActual = e.CaracterActual;
+            EdoActual = e.EdoActual;
+            EdoTransicion = e.FinLexema;
+            IndiceCaracterActual = e.IndiceCaracterActual;
+            IniLexema = e.IniLexema;
+            Lexema = e.Lexema;
+            PasoPorEdoAcept = e.PasoPorEdoAcept;
+            token = e.token;
+            Pila = e.Pila;
+            return true;
         }
 
         public void SetSigma(string sigma)
