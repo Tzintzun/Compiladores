@@ -29,6 +29,7 @@ namespace AnalizadorLexico
 
         }
 
+
         private void button2_Click(object sender, EventArgs e)
         {
             string sigma = txt_exp.Text;
@@ -38,7 +39,8 @@ namespace AnalizadorLexico
 
             if(result)
             {
-                MessageBox.Show("El AFN fue creado exitosamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El AFN fue creado exitosamente", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                er_afd.AgregarAFN(Int32.Parse(txt_afd_id.Text));
             }else
             {
                 MessageBox.Show("AFN no se pudo crear", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
