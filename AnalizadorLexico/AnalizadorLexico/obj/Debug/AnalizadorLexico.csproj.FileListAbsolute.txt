@@ -60,3 +60,27 @@ C:\Users\Diana Paola\Documents\C#\Proyecto compilador\Compiladores\AnalizadorLex
 C:\Users\Diana Paola\Documents\C#\Proyecto compilador\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.UnirAFNs.resources
 C:\Users\david\Documents\GitHub\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.fmrEvaluadorExpresiones.resources
 C:\Users\david\Documents\GitHub\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.fmrERaAFN.resources
+C:\Users\Diana Paola\Documents\C#\Proyecto compilador\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.fmrEvaluadorExpresiones.resources
+C:\Users\Diana Paola\Documents\C#\Proyecto compilador\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.fmrERaAFN.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\bin\Debug\AnalizadorLexico.exe.config
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\bin\Debug\AnalizadorLexico.exe
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\bin\Debug\AnalizadorLexico.pdb
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.csproj.AssemblyReference.cache
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.CerraduraPos.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.Concatenacion.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.ConversorAFNAFD.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.CrearAutomata.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.CrerraduraKleen.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.fmrEvaluadorExpresiones.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.Form1.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.fmrERaAFN.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.pAnalizadorLexico.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.GuardarAFD.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.Opcional.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.Properties.Resources.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.Union.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.UnirAFNs.resources
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.csproj.GenerateResource.cache
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.csproj.CoreCompileInputs.cache
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.exe
+C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.pdb

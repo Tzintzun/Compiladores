@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace AnalizadorLexico
 {
-    public partial class pAnalizadorLexico : Form
+    partial class pAnalizadorLexico : Form
     {
         AFD afd;
         public pAnalizadorLexico()
