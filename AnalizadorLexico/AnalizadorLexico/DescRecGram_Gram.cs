@@ -19,10 +19,11 @@ namespace AnalizadorLexico
         {
             L = new AnalizLexico(FileAFD, IdentiAFD);
         }
-        public void SetGramatica(string sigma)
+        public bool SetGramatica(string sigma)
         {
             Gramatica = sigma;
             L.SetSigma(sigma);
+            return true;
         }
         public bool AnalizarGramatica()
         {

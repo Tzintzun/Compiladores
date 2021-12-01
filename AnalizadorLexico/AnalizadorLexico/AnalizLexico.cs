@@ -114,6 +114,8 @@ namespace AnalizadorLexico
             PasoPorEdoAcept = false;
             IniLexema = 0;
             FinLexema = -1;
+            IndiceCaracterActual = 0;
+            token = -1;
             Pila.Clear();
         }
 
