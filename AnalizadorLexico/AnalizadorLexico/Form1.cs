@@ -98,5 +98,10 @@ namespace AnalizadorLexico
         {
             this.AbrirFormhija(new fmrERaAFN());
         }
+
+        private void descensoRecursivoGramáticaDeGramáticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormhija(new fmrDescRecGram_Gram());
+        }
     }
 }

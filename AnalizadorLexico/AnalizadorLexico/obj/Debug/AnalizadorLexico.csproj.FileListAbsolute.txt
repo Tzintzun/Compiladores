@@ -84,3 +84,4 @@ C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorL
 C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.csproj.CoreCompileInputs.cache
 C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.exe
 C:\Users\david\Desktop\Semestre 7\Compiladores\proyecto\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.pdb
+C:\Users\david\Documents\GitHub\Compiladores\AnalizadorLexico\AnalizadorLexico\obj\Debug\AnalizadorLexico.fmrDescRecGram_Gram.resources

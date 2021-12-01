@@ -57,7 +57,7 @@
     <Compile Include="ClaseAFD.cs" />
     <Compile Include="ClaseTokensGramGram.cs" />
     <Compile Include="ClassEstadoAnalizLexico.cs" />
-    <Compile Include="DescRecGram.cs" />
+    <Compile Include="DescRecGram_Gram.cs" />
     <Compile Include="ER_AFN.cs" />
     <Compile Include="EvaluadorExpr.cs" />
     <Compile Include="Concatenacion.cs">
@@ -137,6 +137,12 @@
     <Compile Include="UnirAFNs.Designer.cs">
       <DependentUpon>UnirAFNs.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmrDescRecGram_Gram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmrDescRecGram_Gram.Designer.cs">
+      <DependentUpon>fmrDescRecGram_Gram.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CerraduraPos.resx">
       <DependentUpon>CerraduraPos.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrerraduraKleen.resx">
       <DependentUpon>CrerraduraKleen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmrDescRecGram_Gram.resx">
+      <DependentUpon>fmrDescRecGram_Gram.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmrEvaluadorExpresiones.resx">
       <DependentUpon>fmrEvaluadorExpresiones.cs</DependentUpon>

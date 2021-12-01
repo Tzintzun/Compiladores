@@ -10,5 +10,7 @@ namespace AnalizadorLexico
     {
         public static char Epsilon = (char)5;
         public static char FIN = (char)0;
+        public static int ERROR = 20000;
+        public static int OMITIR = 20001; // Se pone en los tokens que se quieran omitir
     }
 }
