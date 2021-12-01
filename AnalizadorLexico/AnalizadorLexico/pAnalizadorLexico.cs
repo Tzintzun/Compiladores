@@ -175,5 +175,19 @@ namespace AnalizadorLexico
             // TODO: Se debe agregar al lenguaje
             txt_cadena.Text += " epsilon ";
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // TODO: Cambiar por simbolo especial
+            // TODO: Se debe agregar al lenguaje
+            txt_cadena.Text += " mas ";
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            // TODO: Cambiar por simbolo especial
+            // TODO: Se debe agregar al lenguaje
+            txt_cadena.Text += " menos ";
+        }
     }
 }

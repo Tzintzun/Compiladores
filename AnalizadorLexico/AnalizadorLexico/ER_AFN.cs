@@ -49,7 +49,7 @@ namespace AnalizadorLexico
                 if(Token == 0)
                 {
                     this.result = f;
-                    //f.idAFN = id;
+                    //f.idAFN = result.idAFN;
                     //AFN.ConjuntoAFNs.Add(f);
                     return true;
                 }

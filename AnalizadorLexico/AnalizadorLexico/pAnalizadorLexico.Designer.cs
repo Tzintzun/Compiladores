@@ -44,6 +44,8 @@ namespace AnalizadorLexico
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btn_epsilon = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -131,13 +133,13 @@ namespace AnalizadorLexico
             // 
             this.txt_cadena.Location = new System.Drawing.Point(234, 214);
             this.txt_cadena.Name = "txt_cadena";
-            this.txt_cadena.Size = new System.Drawing.Size(286, 22);
+            this.txt_cadena.Size = new System.Drawing.Size(390, 22);
             this.txt_cadena.TabIndex = 9;
             this.txt_cadena.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(539, 211);
+            this.button2.Location = new System.Drawing.Point(630, 214);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 25);
             this.button2.TabIndex = 10;
@@ -183,14 +185,36 @@ namespace AnalizadorLexico
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.btn_epsilon);
             this.groupBox2.Location = new System.Drawing.Point(630, 258);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(136, 133);
+            this.groupBox2.Size = new System.Drawing.Size(136, 168);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Símbolos Especiales";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(16, 114);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(104, 29);
+            this.button5.TabIndex = 16;
+            this.button5.Text = "Menos";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(16, 79);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(104, 29);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Más";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pAnalizadorLexico
             // 
@@ -235,5 +259,7 @@ namespace AnalizadorLexico
         private System.Windows.Forms.Label lbl_file_name;
         private System.Windows.Forms.Button btn_epsilon;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -33,14 +33,15 @@ namespace AnalizadorLexico
         private void button2_Click(object sender, EventArgs e)
         {
             string sigma = txt_exp.Text;
+            int id_afd = Int32.Parse(txt_afd_id.Text);
             int id_afn = Int32.Parse(txt_afn_id.Text);
-            er_afd = new ER_AFN(sigma, FileAFD, id_afn);
+            er_afd = new ER_AFN(sigma, FileAFD, id_afd);
             bool result = er_afd.IniConversion();
 
             if(result)
             {
+                er_afd.AgregarAFN(id_afn);
                 MessageBox.Show("El AFN fue creado exitosamente", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                er_afd.AgregarAFN(Int32.Parse(txt_afd_id.Text));
             }else
             {
                 MessageBox.Show("AFN no se pudo crear", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);

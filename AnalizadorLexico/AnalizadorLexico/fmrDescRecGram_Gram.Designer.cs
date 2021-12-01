@@ -114,7 +114,7 @@ namespace AnalizadorLexico
             // 
             this.txt_exp.Location = new System.Drawing.Point(283, 229);
             this.txt_exp.Name = "txt_exp";
-            this.txt_exp.Size = new System.Drawing.Size(412, 22);
+            this.txt_exp.Size = new System.Drawing.Size(505, 22);
             this.txt_exp.TabIndex = 17;
             this.txt_exp.TextChanged += new System.EventHandler(this.txt_exp_TextChanged);
             // 

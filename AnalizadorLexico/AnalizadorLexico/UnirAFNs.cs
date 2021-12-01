@@ -66,12 +66,23 @@ namespace AnalizadorLexico
             }
 
             afn = AFN.UnionLexica(id, estados);
+            MessageBox.Show("AFN's unidos correctamente", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             this.label2.Visible = false;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
