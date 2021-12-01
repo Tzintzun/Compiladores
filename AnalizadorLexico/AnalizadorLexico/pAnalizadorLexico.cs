@@ -163,5 +163,17 @@ namespace AnalizadorLexico
 
             
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // TODO: Cambiar por simbolo especial
+            // TODO: Se debe agregar al lenguaje
+            txt_cadena.Text += " epsilon ";
+        }
     }
 }

@@ -42,8 +42,11 @@ namespace AnalizadorLexico
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btn_epsilon = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -72,7 +75,7 @@ namespace AnalizadorLexico
             this.groupBox1.Controls.Add(this.txt_afd_id);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(38, 32);
+            this.groupBox1.Location = new System.Drawing.Point(16, 11);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(284, 132);
             this.groupBox1.TabIndex = 4;
@@ -100,7 +103,7 @@ namespace AnalizadorLexico
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(154, 193);
+            this.label1.Location = new System.Drawing.Point(132, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 17);
             this.label1.TabIndex = 5;
@@ -109,7 +112,7 @@ namespace AnalizadorLexico
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(256, 193);
+            this.comboBox1.Location = new System.Drawing.Point(234, 172);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 7;
@@ -118,7 +121,7 @@ namespace AnalizadorLexico
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(126, 238);
+            this.label3.Location = new System.Drawing.Point(104, 217);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 17);
             this.label3.TabIndex = 8;
@@ -126,7 +129,7 @@ namespace AnalizadorLexico
             // 
             // txt_cadena
             // 
-            this.txt_cadena.Location = new System.Drawing.Point(256, 235);
+            this.txt_cadena.Location = new System.Drawing.Point(234, 214);
             this.txt_cadena.Name = "txt_cadena";
             this.txt_cadena.Size = new System.Drawing.Size(286, 22);
             this.txt_cadena.TabIndex = 9;
@@ -134,7 +137,7 @@ namespace AnalizadorLexico
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(561, 232);
+            this.button2.Location = new System.Drawing.Point(539, 211);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 25);
             this.button2.TabIndex = 10;
@@ -145,7 +148,7 @@ namespace AnalizadorLexico
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(129, 279);
+            this.dataGridView1.Location = new System.Drawing.Point(107, 258);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -154,7 +157,7 @@ namespace AnalizadorLexico
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(320, 479);
+            this.button3.Location = new System.Drawing.Point(298, 458);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(130, 37);
             this.button3.TabIndex = 12;
@@ -164,9 +167,30 @@ namespace AnalizadorLexico
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileName = "afd.txt";
             this.openFileDialog1.RestoreDirectory = true;
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // btn_epsilon
+            // 
+            this.btn_epsilon.Location = new System.Drawing.Point(16, 44);
+            this.btn_epsilon.Name = "btn_epsilon";
+            this.btn_epsilon.Size = new System.Drawing.Size(104, 29);
+            this.btn_epsilon.TabIndex = 14;
+            this.btn_epsilon.Text = "Epsilon";
+            this.btn_epsilon.UseVisualStyleBackColor = true;
+            this.btn_epsilon.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btn_epsilon);
+            this.groupBox2.Location = new System.Drawing.Point(630, 258);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(136, 133);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Símbolos Especiales";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // pAnalizadorLexico
             // 
@@ -174,6 +198,7 @@ namespace AnalizadorLexico
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 537);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
@@ -187,6 +212,7 @@ namespace AnalizadorLexico
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +233,7 @@ namespace AnalizadorLexico
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label lbl_file_name;
+        private System.Windows.Forms.Button btn_epsilon;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
