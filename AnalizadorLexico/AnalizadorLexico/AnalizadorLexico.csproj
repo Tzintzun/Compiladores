@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="ClaseAFD.cs" />
     <Compile Include="ClaseTokensGramGram.cs" />
+    <Compile Include="Nodo.cs" />
     <Compile Include="ClassEstadoAnalizLexico.cs" />
     <Compile Include="DescRecGram_Gram.cs" />
     <Compile Include="ER_AFN.cs" />

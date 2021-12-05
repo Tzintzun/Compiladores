@@ -10,14 +10,24 @@ namespace AnalizadorLexico
     {
         public string Gramatica;
         public AnalizLexico L;
+        // Acciones Semánticas
+        public ElemArreglo[] arrReglas = new ElemArreglo[100];
+        public int NumReglas = 0;
+
+        HashSet<Nodo> vn = new HashSet<Nodo>();
+        HashSet<Nodo> vt = new HashSet<Nodo>();
         public DescRecGram_Gram(string sigma, string FileAFD, int IdentifAFD)
         {
             Gramatica = sigma;
             L = new AnalizLexico(Gramatica, FileAFD, IdentifAFD);
+            vn.Clear();
+            vt.Clear();
         }
         public DescRecGram_Gram(string FileAFD, int IdentiAFD)
         {
             L = new AnalizLexico(FileAFD, IdentiAFD);
+            vn.Clear();
+            vt.Clear();
         }
         public bool SetGramatica(string sigma)
         {
@@ -80,78 +90,108 @@ namespace AnalizadorLexico
         bool Reglas()
         {
             int token;
-            if (LadoIzquierdo())
+            string simbolo = "";
+            if (LadoIzquierdo(ref simbolo))
             {
+                vn.Add(new Nodo(simbolo, false));
                 token = L.yylex();
                 if (token == TokensGram_Gram.FLECHA)
-                    if (LadosDerechos())
+                    if (LadosDerechos(simbolo))
                         return true;
             }
             return false;
         }
 
-        bool LadoIzquierdo()
+        bool LadoIzquierdo(ref string simbolo)
         {
             int token;
             token = L.yylex();
             if (token == TokensGram_Gram.SIMBOLO)
+            {
+                simbolo = L.Lexema;
                 return true;
+            }
             return false;
         }
 
-        bool LadosDerechos()
+        bool LadosDerechos(string simbolo)
         {
-            if (LadoDerecho())
-                if (LadosDerechosP())
+            if (LadoDerecho(simbolo))
+                if (LadosDerechosP(simbolo))
                     return true;
             return false;
         }
 
-        bool LadosDerechosP()
+        bool LadosDerechosP(string simbolo)
         {
             int token;
             token = L.yylex();
             if (token == TokensGram_Gram.OR)
             {
-                if (LadoDerecho())
-                    if (LadosDerechosP())
+                if (LadoDerecho(simbolo))
+                    if (LadosDerechosP(simbolo))
                         return true;
                 return false;
             }
             L.UndoToken();
             return true;
         }
-
-        bool LadoDerecho()
+        // Simbolo es el lado izquierdo de la regla gramatical
+        bool LadoDerecho(string simbolo)
         {
-            if (SecSimbolos())
+            // Secuencia de simbolos
+            List<Nodo> lista = new List<Nodo>();
+            lista.Clear();
+            // Crea la lista y agrega a la secuencia de simbolos
+            if (SecSimbolos(ref lista))
+            {
+                arrReglas[NumReglas] = new ElemArreglo();
+                arrReglas[NumReglas].infSimbolo = new Nodo(simbolo);
+                arrReglas[NumReglas++].listaLadoDerecho = lista;
                 return true;
+            }
             return false;
         }
 
-        bool SecSimbolos()
+        bool SecSimbolos(ref List<Nodo> lista)
         {
             int token;
-            token = L.yylex();
-            if (token == TokensGram_Gram.SIMBOLO)
-                if (SecSimbolosP())
-                    return true;
-            return false;
-        }
-
-        bool SecSimbolosP()
-        {
-            int token;
+            Nodo n;
             token = L.yylex();
             if (token == TokensGram_Gram.SIMBOLO)
             {
-                if (SecSimbolosP())
+                n = new Nodo(L.Lexema);
+                // En lista se tienen todos los simbolos que aparecen despues de TokensGram_Gram.SIMBOLO
+                if (SecSimbolosP(ref lista))
+                {
+                    lista.Insert(0, n);
                     return true;
+                }
+            }
+            return false;
+        }
+
+        bool SecSimbolosP(ref List<Nodo> lista)
+        {
+            int token;
+            Nodo n;
+            token = L.yylex();
+            if (token == TokensGram_Gram.SIMBOLO)
+            {
+                n = new Nodo(L.Lexema, false);
+                if (SecSimbolosP(ref lista))
+                {
+                    lista.Insert(0, n);
+                    return true;
+                }
                 return false;
             }
             L.UndoToken();
             return true;
         }
+        void IdentificarTerminales()
+        {
 
+        }
     }
 }
