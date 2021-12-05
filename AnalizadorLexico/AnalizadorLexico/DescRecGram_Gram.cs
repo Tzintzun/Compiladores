@@ -13,9 +13,9 @@ namespace AnalizadorLexico
         // Acciones Semánticas
         public ElemArreglo[] arrReglas = new ElemArreglo[100];
         public int NumReglas = 0;
-
-        HashSet<Nodo> vn = new HashSet<Nodo>();
-        HashSet<Nodo> vt = new HashSet<Nodo>();
+        // División de conjunto de simbolos entre terminales y no terminales
+        HashSet<string> vn = new HashSet<string>(); // No terminales
+        HashSet<string> vt = new HashSet<string>(); // Terminales
         public DescRecGram_Gram(string sigma, string FileAFD, int IdentifAFD)
         {
             Gramatica = sigma;
@@ -42,7 +42,10 @@ namespace AnalizadorLexico
             {
                 token = L.yylex();
                 if (token == 0)
+                {
+                    IdentificarTerminales();
                     return true;
+                }
             }
             return false;
         }
@@ -93,7 +96,7 @@ namespace AnalizadorLexico
             string simbolo = "";
             if (LadoIzquierdo(ref simbolo))
             {
-                vn.Add(new Nodo(simbolo, false));
+                vn.Add(simbolo);
                 token = L.yylex();
                 if (token == TokensGram_Gram.FLECHA)
                     if (LadosDerechos(simbolo))
@@ -191,7 +194,56 @@ namespace AnalizadorLexico
         }
         void IdentificarTerminales()
         {
-
+            int i;
+            for(i = 0; i < NumReglas; i++)
+            {
+                foreach(Nodo n in arrReglas[i].listaLadoDerecho)
+                {
+                    if(!vn.Contains(n.simbolo))
+                    {
+                        n.terminal = true;
+                        vt.Add(n.simbolo);
+                    }
+                }
+            }
         }
+        public HashSet<string> First(List<Nodo> lista)
+        {
+            int i, j;
+            Nodo n;
+            HashSet<string> R = new HashSet<string>();
+            R.Clear();
+
+            if (lista.Count == 0)
+                return R;
+            for(j = 0; j < lista.Count; j++)
+            {
+                n = lista[j];
+                if(n.terminal || n.simbolo.Equals("epsilon"))
+                {
+                    R.Add(n.simbolo);
+                    return R;
+                }
+                // N es no terminal
+                // Se calcula el fisrt de cada lado derecho de este no terminal
+                for(i = 0; i < NumReglas; i++)
+                {
+                    if (arrReglas[i].listaLadoDerecho[0].simbolo.Equals(n.simbolo)) // Ejemplo E - > E + T
+                        continue;
+                    if (arrReglas[i].infSimbolo.simbolo.Equals(n.simbolo))
+                        R.UnionWith(First(arrReglas[i].listaLadoDerecho));
+                }
+                if(R.Contains("epsilon"))
+                {
+                    if (j == (lista.Count - 1))
+                        continue;
+                    R.Remove("epsilon");
+                }
+                else              
+                    break;                
+            }
+            return R;
+        }
+        
     }
 }
