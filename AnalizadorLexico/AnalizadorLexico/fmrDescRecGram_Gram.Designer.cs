@@ -38,17 +38,17 @@ namespace AnalizadorLexico
             this.button1 = new System.Windows.Forms.Button();
             this.txt_exp = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgrid_reglas = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_first = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgrid_first = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.Simbolo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_reglas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_first)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_eval
@@ -132,15 +132,19 @@ namespace AnalizadorLexico
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // dataGridView1
+            // dgrid_reglas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(55, 247);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(307, 199);
-            this.dataGridView1.TabIndex = 19;
+            this.dgrid_reglas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_reglas.Location = new System.Drawing.Point(55, 247);
+            this.dgrid_reglas.MultiSelect = false;
+            this.dgrid_reglas.Name = "dgrid_reglas";
+            this.dgrid_reglas.ReadOnly = true;
+            this.dgrid_reglas.RowHeadersWidth = 51;
+            this.dgrid_reglas.RowTemplate.Height = 24;
+            this.dgrid_reglas.Size = new System.Drawing.Size(307, 199);
+            this.dgrid_reglas.TabIndex = 19;
+            this.dgrid_reglas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_reglas_CellClick_1);
+            this.dgrid_reglas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_reglas_CellContentClick);
             // 
             // label2
             // 
@@ -169,18 +173,18 @@ namespace AnalizadorLexico
             this.txt_first.Size = new System.Drawing.Size(396, 22);
             this.txt_first.TabIndex = 22;
             // 
-            // dataGridView2
+            // dgrid_first
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgrid_first.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_first.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Simbolo});
-            this.dataGridView2.Location = new System.Drawing.Point(380, 275);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(266, 171);
-            this.dataGridView2.TabIndex = 23;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dgrid_first.Location = new System.Drawing.Point(380, 275);
+            this.dgrid_first.Name = "dgrid_first";
+            this.dgrid_first.RowHeadersWidth = 51;
+            this.dgrid_first.RowTemplate.Height = 24;
+            this.dgrid_first.Size = new System.Drawing.Size(266, 171);
+            this.dgrid_first.TabIndex = 23;
+            this.dgrid_first.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // button2
             // 
@@ -215,11 +219,11 @@ namespace AnalizadorLexico
             this.ControlBox = false;
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgrid_first);
             this.Controls.Add(this.txt_first);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgrid_reglas);
             this.Controls.Add(this.btn_eval);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -228,8 +232,8 @@ namespace AnalizadorLexico
             this.Load += new System.EventHandler(this.DescRecGram_Gram_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_reglas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_first)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,11 +249,11 @@ namespace AnalizadorLexico
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_exp;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgrid_reglas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_first;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgrid_first;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Simbolo;

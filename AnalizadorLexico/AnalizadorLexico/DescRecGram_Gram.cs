@@ -14,8 +14,8 @@ namespace AnalizadorLexico
         public ElemArreglo[] arrReglas = new ElemArreglo[100];
         public int NumReglas = 0;
         // División de conjunto de simbolos entre terminales y no terminales
-        HashSet<string> vn = new HashSet<string>(); // No terminales
-        HashSet<string> vt = new HashSet<string>(); // Terminales
+        public HashSet<string> vn = new HashSet<string>(); // No terminales
+        public HashSet<string> vt = new HashSet<string>(); // Terminales
         public DescRecGram_Gram(string sigma, string FileAFD, int IdentifAFD)
         {
             Gramatica = sigma;
@@ -244,6 +244,26 @@ namespace AnalizadorLexico
             }
             return R;
         }
-        
+        public HashSet<string> Follow(string simbolo) // Simbolo no terminal
+        {
+            HashSet<string> R = new HashSet<string>();
+            int i, j;
+
+            if (arrReglas[0].infSimbolo.simbolo.Equals(simbolo))
+                R.Add("$");
+            for(i = 0; i < NumReglas; i++)
+            {
+                for(j = 0; j < arrReglas[i].listaLadoDerecho.Count; j++)
+                {
+                    if(arrReglas[i].listaLadoDerecho[j].simbolo.Equals(simbolo))
+                    {
+                        // Se calcula el First de la lista que está después del elemento j
+                        //aux = First(arrReglas[i].listaLadoDerecho[j]);
+                        //if (aux.empty())
+                    }
+                }
+            }
+            return R;
+        }
     }
 }

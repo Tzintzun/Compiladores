@@ -28,6 +28,33 @@ namespace AnalizadorLexico
 
             if (AnalizGram.AnalizarGramatica())
             {
+                int i= 0;
+
+                dgrid_reglas.Rows.Clear();
+                dgrid_reglas.Columns.Clear();
+
+                dgrid_reglas.ColumnCount = 2;
+                dgrid_reglas.Columns[0].Name = "Simbolo";
+                dgrid_reglas.Columns[1].Name = "¿Es Terminal?";
+
+                foreach(string simbolo in AnalizGram.vn)
+                {
+                    dgrid_reglas.Rows.Add();
+
+                    dgrid_reglas.Rows[i].Cells[0].Value = simbolo;
+                    dgrid_reglas.Rows[i].Cells[1].Value = "No terminal";
+                    i++;
+                }
+
+                foreach (string simbolo in AnalizGram.vt)
+                {
+                    dgrid_reglas.Rows.Add();
+
+                    dgrid_reglas.Rows[i].Cells[0].Value = simbolo;
+                    dgrid_reglas.Rows[i].Cells[1].Value = "Terminal";
+                    i++;
+                }
+
                 MessageBox.Show("Expresión sintácticamente correcta", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -71,11 +98,6 @@ namespace AnalizadorLexico
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -89,6 +111,20 @@ namespace AnalizadorLexico
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dgrid_reglas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine("ayudaaaa");
+            string simbolo = (string)dgrid_reglas.Rows[e.RowIndex].Cells[0].Value;
+            txt_first.Text += simbolo + " ";
+        }
+
+        private void dgrid_reglas_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine("ayudaaaa");
+            string simbolo = (string)dgrid_reglas.Rows[e.RowIndex].Cells[0].Value;
+            txt_first.Text += simbolo + " ";
         }
     }
 }
