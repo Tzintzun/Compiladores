@@ -31,6 +31,8 @@ namespace AnalizadorLexico
         }
         public bool SetGramatica(string sigma)
         {
+            vn.Clear();
+            vt.Clear();
             Gramatica = sigma;
             L.SetSigma(sigma);
             return true;
@@ -247,19 +249,49 @@ namespace AnalizadorLexico
         public HashSet<string> Follow(string simbolo) // Simbolo no terminal
         {
             HashSet<string> R = new HashSet<string>();
-            int i, j;
+            HashSet<string> Aux = new HashSet<string>();
+            List<Nodo> ListaPost = new List<Nodo>();
+            int i, j, k;
+
+            R.Clear();
 
             if (arrReglas[0].infSimbolo.simbolo.Equals(simbolo))
                 R.Add("$");
-            for(i = 0; i < NumReglas; i++)
+            for(i = 0; i < NumReglas; i++) // Se busca simbolo en los lados derechos de todas las reglas
             {
+                // Se recorre la lista del lado derecho buscando al simbolo
                 for(j = 0; j < arrReglas[i].listaLadoDerecho.Count; j++)
                 {
                     if(arrReglas[i].listaLadoDerecho[j].simbolo.Equals(simbolo))
                     {
-                        // Se calcula el First de la lista que está después del elemento j
-                        //aux = First(arrReglas[i].listaLadoDerecho[j]);
-                        //if (aux.empty())
+                        ListaPost.Clear();
+                        // Obtenemos la lista que corresponde a los simbolos que están después del simbolo
+                        for (k = j + 1; k < arrReglas[i].listaLadoDerecho.Count; k++)
+                            ListaPost.Add(arrReglas[i].listaLadoDerecho[k]);
+
+                        // Si no hay más simbolos después del simbolo, se calcula el Follow del lado izquierdo de la regla
+                        if (ListaPost.Count == 0) 
+                        {
+                            // Si el simbolo del lado izquierdo es igual al simbolo del que queremos calcular
+                            // el follow, omitimos la regla
+                            if (!arrReglas[i].infSimbolo.simbolo.Equals(simbolo))
+                                R.UnionWith(Follow(arrReglas[i].infSimbolo.simbolo));
+                            break;
+                        }
+
+                        // Se calcula el First de la lista 1 que está después del elemento j
+                        Aux.Clear();
+                        Aux = First(ListaPost);
+                        if (Aux.Contains("epsilon"))
+                        {
+                            Aux.Remove("epsilon");
+                            R.UnionWith(Aux);
+
+                            if (!arrReglas[i].infSimbolo.simbolo.Equals(simbolo))
+                                R.UnionWith(Follow(arrReglas[i].infSimbolo.simbolo));
+                        }
+                        else
+                            R.UnionWith(Aux);
                     }
                 }
             }
