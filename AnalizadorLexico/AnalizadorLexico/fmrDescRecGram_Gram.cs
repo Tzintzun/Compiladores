@@ -138,29 +138,37 @@ namespace AnalizadorLexico
         private void button2_Click(object sender, EventArgs e)
         {
             int i, j;
+            bool terminal;
             string cadena = txt_first.Text;
             string[] simbolos = cadena.Split(' ');
             List<Nodo> lista = new List<Nodo>();
-
-            for(i = 0; i < simbolos.Length; i++)
-            {
-                for(j = 0; j < AnalizGram.NumReglas; j++)
-                {
-                    if (AnalizGram.arrReglas[j].infSimbolo.simbolo.Equals(simbolos[i]))
-                    {
-                        Console.WriteLine(simbolos[i]);
-                        lista.Add(AnalizGram.arrReglas[j].infSimbolo);
-                        break;
-                    }
-                }
-            }
-            HashSet<string> first_simbolos = AnalizGram.First(lista);
+            HashSet<string> first_simbolos;
 
             dgrid_first.Rows.Clear();
             dgrid_first.Columns.Clear();
 
             dgrid_first.ColumnCount = 1;
             dgrid_first.Columns[0].Name = "Simbolo";
+
+            for (i = 0; i < simbolos.Length - 1; i++)
+            {
+                terminal = true;
+                for(j = 0; j < AnalizGram.NumReglas; j++)
+                {
+                    if (AnalizGram.arrReglas[j].infSimbolo.simbolo.Equals(simbolos[i]))
+                    {
+                        Console.WriteLine(simbolos[i]);
+                        lista.Add(AnalizGram.arrReglas[j].infSimbolo);
+                        terminal = false;
+                        break;
+                    }
+                }
+                if (terminal)
+                {
+                    lista.Add(new Nodo(simbolos[i], true));
+                }
+            }
+            first_simbolos = AnalizGram.First(lista);
 
             i = 0;
             foreach (string simbolo in first_simbolos)
