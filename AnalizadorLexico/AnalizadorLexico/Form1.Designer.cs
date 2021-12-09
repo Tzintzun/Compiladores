@@ -46,8 +46,9 @@ namespace AnalizadorLexico
             this.análisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.descensoRecursivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.descensoRecursivoGramáticaDeGramáticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.anállisisLL1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,7 +162,8 @@ namespace AnalizadorLexico
             // 
             this.análisisToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.descensoRecursivoToolStripMenuItem,
-            this.descensoRecursivoGramáticaDeGramáticasToolStripMenuItem});
+            this.descensoRecursivoGramáticaDeGramáticasToolStripMenuItem,
+            this.anállisisLL1ToolStripMenuItem});
             this.análisisToolStripMenuItem.Name = "análisisToolStripMenuItem";
             this.análisisToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
             this.análisisToolStripMenuItem.Text = " Análisis sintáctico";
@@ -177,9 +179,16 @@ namespace AnalizadorLexico
             // calculadoraToolStripMenuItem
             // 
             this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
-            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.calculadoraToolStripMenuItem.Text = "Calculadora";
             this.calculadoraToolStripMenuItem.Click += new System.EventHandler(this.calculadoraToolStripMenuItem_Click);
+            // 
+            // descensoRecursivoGramáticaDeGramáticasToolStripMenuItem
+            // 
+            this.descensoRecursivoGramáticaDeGramáticasToolStripMenuItem.Name = "descensoRecursivoGramáticaDeGramáticasToolStripMenuItem";
+            this.descensoRecursivoGramáticaDeGramáticasToolStripMenuItem.Size = new System.Drawing.Size(393, 26);
+            this.descensoRecursivoGramáticaDeGramáticasToolStripMenuItem.Text = "Descenso Recursivo Gramática de Gramáticas";
+            this.descensoRecursivoGramáticaDeGramáticasToolStripMenuItem.Click += new System.EventHandler(this.descensoRecursivoGramáticaDeGramáticasToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -189,12 +198,11 @@ namespace AnalizadorLexico
             this.panel1.Size = new System.Drawing.Size(1067, 522);
             this.panel1.TabIndex = 2;
             // 
-            // descensoRecursivoGramáticaDeGramáticasToolStripMenuItem
+            // anállisisLL1ToolStripMenuItem
             // 
-            this.descensoRecursivoGramáticaDeGramáticasToolStripMenuItem.Name = "descensoRecursivoGramáticaDeGramáticasToolStripMenuItem";
-            this.descensoRecursivoGramáticaDeGramáticasToolStripMenuItem.Size = new System.Drawing.Size(393, 26);
-            this.descensoRecursivoGramáticaDeGramáticasToolStripMenuItem.Text = "Descenso Recursivo Gramática de Gramáticas";
-            this.descensoRecursivoGramáticaDeGramáticasToolStripMenuItem.Click += new System.EventHandler(this.descensoRecursivoGramáticaDeGramáticasToolStripMenuItem_Click);
+            this.anállisisLL1ToolStripMenuItem.Name = "anállisisLL1ToolStripMenuItem";
+            this.anállisisLL1ToolStripMenuItem.Size = new System.Drawing.Size(393, 26);
+            this.anállisisLL1ToolStripMenuItem.Text = "Análisis LL(1)";
             // 
             // Form1
             // 
@@ -235,6 +243,7 @@ namespace AnalizadorLexico
         private System.Windows.Forms.ToolStripMenuItem calculadoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eRAFNToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem descensoRecursivoGramáticaDeGramáticasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem anállisisLL1ToolStripMenuItem;
     }
 }
 
