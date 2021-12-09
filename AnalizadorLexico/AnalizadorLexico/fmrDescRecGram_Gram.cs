@@ -44,10 +44,28 @@ namespace AnalizadorLexico
                 string path_file = openFileDialog1.FileName;
                 string[] parts_parh_file = path_file.Split('\\');
                 string name_file = parts_parh_file[parts_parh_file.Length - 1];
-                lbl_file_name.Text = name_file;
-                lbl_file_name.Visible = true;
-
-                AnalizGram = new DescRecGram_Gram(path_file, -1);
+                
+                int idAfd=0;
+                if(Int32.TryParse(txt_afd_id.Text,out idAfd))
+                {
+                    foreach(AFD d in AFD.conjAFDs)
+                    {
+                        if(d.IdAFD == idAfd)
+                        {
+                            MessageBox.Show("ID del AFD ya ocupado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                    }
+                    AnalizGram = new DescRecGram_Gram(path_file, idAfd);
+                    lbl_file_name.Text = name_file;
+                    lbl_file_name.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("El ID del AFd debe de ser un numero entero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+               
             }
             else
             {
