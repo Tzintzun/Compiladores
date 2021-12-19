@@ -1,0 +1,1 @@
+E-> T Ep; Ep -> mas T Ep | menos T Ep | epsilon; T-> F Tp; Tp -> prod F Tp | div F Tp | epsilon; F-> parI E parD | num;

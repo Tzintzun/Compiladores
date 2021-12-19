@@ -103,5 +103,10 @@ namespace AnalizadorLexico
         {
             this.AbrirFormhija(new fmrDescRecGram_Gram());
         }
+
+        private void anállisisLL1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormhija(new AnalisarLL1());
+        }
     }
 }

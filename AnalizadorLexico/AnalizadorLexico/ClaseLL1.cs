@@ -31,7 +31,7 @@ namespace AnalizadorLexico
         public SimbTerm[] vt;
         public string[] vt2;
         public string[] vn;
-        const string ArchAFDLexiGramGram = "";
+        const string ArchAFDLexiGramGram = "C:\\Users\\david\\Desktop\\Semestre 7\\Compiladores\\TxtGram_Gram.txt";
 
         public AnalizadorLL1(string cadGramatica, string ArchAFDLexic)
         {
@@ -49,13 +49,17 @@ namespace AnalizadorLexico
             lexGram = new AnalizLexico(ArchAFDLexic, 0);
         }
 
-        public void crearTablaLL1()
+        public bool crearTablaLL1()
         {
             int i;
             HashSet<string> first = new HashSet<string>();
             HashSet<string> follow = new HashSet<string>();
 
-            DesRecG.AnalizarGramatica();
+            bool resultadoAnalisis = DesRecG.AnalizarGramatica();
+            if (!resultadoAnalisis)
+            {
+                return resultadoAnalisis;
+            }
             vt = new SimbTerm[DesRecG.vt.Count + 1];
             vt2 = new string[DesRecG.vt.Count + 1];
 
@@ -80,7 +84,7 @@ namespace AnalizadorLexico
             tablaLL1 = new int[DesRecG.vn.Count + 1, DesRecG.vt.Count + 1];
             for (int j = 0; j <= DesRecG.vn.Count; j++)
                 for (int k = 0; k <= DesRecG.vt.Count; k++)
-                    tablaLL1[k, 1] = -1;
+                    tablaLL1[j, k] = -1;
             
             int row;
             int col;
@@ -109,6 +113,7 @@ namespace AnalizadorLexico
                     }
                 }
             }
+            return resultadoAnalisis;
         }
     }
 }

@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AFN.cs" />
+    <Compile Include="AnalisarLL1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalisarLL1.Designer.cs">
+      <DependentUpon>AnalisarLL1.cs</DependentUpon>
+    </Compile>
     <Compile Include="AnalizLexico.cs" />
     <Compile Include="CerraduraPos.cs">
       <SubType>Form</SubType>
@@ -63,6 +69,7 @@
     <Compile Include="fmrAnalisisLL1.Designer.cs">
       <DependentUpon>fmrAnalisisLL1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LL1.cs" />
     <Compile Include="Nodo.cs" />
     <Compile Include="ClassEstadoAnalizLexico.cs" />
     <Compile Include="DescRecGram_Gram.cs" />
@@ -151,6 +158,9 @@
     <Compile Include="fmrDescRecGram_Gram.Designer.cs">
       <DependentUpon>fmrDescRecGram_Gram.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AnalisarLL1.resx">
+      <DependentUpon>AnalisarLL1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CerraduraPos.resx">
       <DependentUpon>CerraduraPos.cs</DependentUpon>
     </EmbeddedResource>

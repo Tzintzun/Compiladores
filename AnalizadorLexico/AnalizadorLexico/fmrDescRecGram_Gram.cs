@@ -24,6 +24,11 @@ namespace AnalizadorLexico
         {
             string texto = txt_exp.Text;
             Console.WriteLine(texto);
+            if(AnalizGram == null)
+            {
+                MessageBox.Show("Porfavor cargue una gramatica", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             AnalizGram.SetGramatica(texto);
 
             if (AnalizGram.AnalizarGramatica())

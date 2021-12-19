@@ -37,6 +37,7 @@ namespace AnalizadorLexico
             L.SetSigma(sigma);
             return true;
         }
+
         public bool AnalizarGramatica()
         {
             int token;
@@ -134,8 +135,12 @@ namespace AnalizadorLexico
             if (token == TokensGram_Gram.OR)
             {
                 if (LadoDerecho(simbolo))
+                {
                     if (LadosDerechosP(simbolo))
+                    {
                         return true;
+                    }
+                }
                 return false;
             }
             L.UndoToken();
@@ -288,7 +293,10 @@ namespace AnalizadorLexico
                             R.UnionWith(Aux);
 
                             if (!arrReglas[i].infSimbolo.simbolo.Equals(simbolo))
+                            {
                                 R.UnionWith(Follow(arrReglas[i].infSimbolo.simbolo));
+                            }
+                                
                         }
                         else
                             R.UnionWith(Aux);
