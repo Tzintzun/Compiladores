@@ -130,12 +130,12 @@ namespace AnalizadorLexico
             analisisAFD.Columns.Add("Token", "Token");
             AnalizLexico l = new AnalizLexico(path_file, 100);
             int filas;
-            if (textBox1.Text.Equals("") || textBox1.Text == null)
+            if (txt_sigma.Text.Equals("") || txt_sigma.Text == null)
             {
                 MessageBox.Show("Cadena de entrada vacia","ERROR");
                 return;
             }
-            l.SetSigma(textBox1.Text);
+            l.SetSigma(txt_sigma.Text);
             int token = l.yylex();
             while(token != SimbolosEspeciales.FIN)
             {
@@ -183,13 +183,13 @@ namespace AnalizadorLexico
                 }
             }
 
-            if(textBox1.Text.Equals("") || textBox1.Text == null)
+            if(txt_sigma.Text.Equals("") || txt_sigma.Text == null)
             {
                 MessageBox.Show("Ingresa una cadena", "ERROR");
                 return;
             }
 
-            if(analizador.analizarSintacticamente(textBox1.Text, procesosAnalisis))
+            if(analizador.analizarSintacticamente(txt_sigma.Text, procesosAnalisis))
             {
                 MessageBox.Show("Cadena Correcta", "Succes");
                 return;
@@ -214,6 +214,27 @@ namespace AnalizadorLexico
         private void btn_reset_Click(object sender, EventArgs e)
         {
             gramatica.Text = "";
+            tablaNTerminales.Rows.Clear();
+            tablaNTerminales.Columns.Clear();
+
+            tablaTerminales.Rows.Clear();
+            tablaTerminales.Columns.Clear();
+
+            tablaLL1.Rows.Clear();
+            tablaLL1.Columns.Clear();
+
+            btn_limpiar_cadena_Click(sender, e);
+        }
+
+        private void btn_limpiar_cadena_Click(object sender, EventArgs e)
+        {
+            txt_sigma.Text = "";
+
+            analisisAFD.Rows.Clear();
+            analisisAFD.Columns.Clear();
+
+            procesosAnalisis.Rows.Clear();
+            procesosAnalisis.Columns.Clear();
         }
     }
 }

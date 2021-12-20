@@ -38,7 +38,7 @@ namespace AnalizadorLexico
             this.label2 = new System.Windows.Forms.Label();
             this.yylexBoton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_sigma = new System.Windows.Forms.TextBox();
             this.botonAnalisisRapido = new System.Windows.Forms.Button();
             this.analisisAFD = new System.Windows.Forms.DataGridView();
             this.procesosAnalisis = new System.Windows.Forms.DataGridView();
@@ -47,6 +47,8 @@ namespace AnalizadorLexico
             this.btn_reset = new System.Windows.Forms.Button();
             this.btn_gram = new System.Windows.Forms.Button();
             this.lbl_file_name = new System.Windows.Forms.Label();
+            this.lbl_tabla_ll1 = new System.Windows.Forms.Label();
+            this.btn_limpiar_cadena = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaNTerminales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTerminales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaLL1)).BeginInit();
@@ -96,11 +98,11 @@ namespace AnalizadorLexico
             // tablaLL1
             // 
             this.tablaLL1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaLL1.Location = new System.Drawing.Point(52, 384);
+            this.tablaLL1.Location = new System.Drawing.Point(52, 409);
             this.tablaLL1.Margin = new System.Windows.Forms.Padding(4);
             this.tablaLL1.Name = "tablaLL1";
             this.tablaLL1.RowHeadersWidth = 51;
-            this.tablaLL1.Size = new System.Drawing.Size(573, 330);
+            this.tablaLL1.Size = new System.Drawing.Size(573, 305);
             this.tablaLL1.TabIndex = 4;
             // 
             // label1
@@ -130,7 +132,7 @@ namespace AnalizadorLexico
             this.yylexBoton.Name = "yylexBoton";
             this.yylexBoton.Size = new System.Drawing.Size(165, 49);
             this.yylexBoton.TabIndex = 7;
-            this.yylexBoton.Text = "Agregar AFD";
+            this.yylexBoton.Text = "Seleccionar AFD";
             this.yylexBoton.UseVisualStyleBackColor = true;
             this.yylexBoton.Click += new System.EventHandler(this.yylexBoton_Click);
             // 
@@ -138,20 +140,20 @@ namespace AnalizadorLexico
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // textBox1
+            // txt_sigma
             // 
-            this.textBox1.Location = new System.Drawing.Point(841, 162);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(265, 22);
-            this.textBox1.TabIndex = 8;
+            this.txt_sigma.Location = new System.Drawing.Point(841, 162);
+            this.txt_sigma.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_sigma.Name = "txt_sigma";
+            this.txt_sigma.Size = new System.Drawing.Size(265, 22);
+            this.txt_sigma.TabIndex = 8;
             // 
             // botonAnalisisRapido
             // 
             this.botonAnalisisRapido.Location = new System.Drawing.Point(841, 194);
             this.botonAnalisisRapido.Margin = new System.Windows.Forms.Padding(4);
             this.botonAnalisisRapido.Name = "botonAnalisisRapido";
-            this.botonAnalisisRapido.Size = new System.Drawing.Size(183, 39);
+            this.botonAnalisisRapido.Size = new System.Drawing.Size(167, 39);
             this.botonAnalisisRapido.TabIndex = 9;
             this.botonAnalisisRapido.Text = "Comprobar AFD";
             this.botonAnalisisRapido.UseVisualStyleBackColor = true;
@@ -231,11 +233,34 @@ namespace AnalizadorLexico
             this.lbl_file_name.Text = "File";
             this.lbl_file_name.Visible = false;
             // 
+            // lbl_tabla_ll1
+            // 
+            this.lbl_tabla_ll1.AutoSize = true;
+            this.lbl_tabla_ll1.Location = new System.Drawing.Point(49, 388);
+            this.lbl_tabla_ll1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_tabla_ll1.Name = "lbl_tabla_ll1";
+            this.lbl_tabla_ll1.Size = new System.Drawing.Size(82, 17);
+            this.lbl_tabla_ll1.TabIndex = 17;
+            this.lbl_tabla_ll1.Text = "Tabla LL(1)";
+            // 
+            // btn_limpiar_cadena
+            // 
+            this.btn_limpiar_cadena.Location = new System.Drawing.Point(1016, 194);
+            this.btn_limpiar_cadena.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_limpiar_cadena.Name = "btn_limpiar_cadena";
+            this.btn_limpiar_cadena.Size = new System.Drawing.Size(92, 39);
+            this.btn_limpiar_cadena.TabIndex = 18;
+            this.btn_limpiar_cadena.Text = "Limpiar";
+            this.btn_limpiar_cadena.UseVisualStyleBackColor = true;
+            this.btn_limpiar_cadena.Click += new System.EventHandler(this.btn_limpiar_cadena_Click);
+            // 
             // AnalizarLL1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1367, 764);
+            this.Controls.Add(this.btn_limpiar_cadena);
+            this.Controls.Add(this.lbl_tabla_ll1);
             this.Controls.Add(this.lbl_file_name);
             this.Controls.Add(this.btn_gram);
             this.Controls.Add(this.btn_reset);
@@ -244,7 +269,7 @@ namespace AnalizadorLexico
             this.Controls.Add(this.procesosAnalisis);
             this.Controls.Add(this.analisisAFD);
             this.Controls.Add(this.botonAnalisisRapido);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_sigma);
             this.Controls.Add(this.yylexBoton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -278,7 +303,7 @@ namespace AnalizadorLexico
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button yylexBoton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_sigma;
         private System.Windows.Forms.Button botonAnalisisRapido;
         private System.Windows.Forms.DataGridView analisisAFD;
         private System.Windows.Forms.DataGridView procesosAnalisis;
@@ -287,5 +312,7 @@ namespace AnalizadorLexico
         private System.Windows.Forms.Button btn_reset;
         private System.Windows.Forms.Button btn_gram;
         private System.Windows.Forms.Label lbl_file_name;
+        private System.Windows.Forms.Label lbl_tabla_ll1;
+        private System.Windows.Forms.Button btn_limpiar_cadena;
     }
 }
