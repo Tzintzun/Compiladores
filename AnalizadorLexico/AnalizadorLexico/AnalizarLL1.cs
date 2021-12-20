@@ -92,12 +92,18 @@ namespace AnalizadorLexico
                         
                     }
                 }
-                tablaLL1.Columns.Remove("epsilon");
-                if (ep >= 0)
+                try
                 {
-                    tablaTerminales.Rows.RemoveAt(ep);
+                    tablaLL1.Columns.Remove("epsilon");
+                    if (ep >= 0)
+                    {
+                        tablaTerminales.Rows.RemoveAt(ep);
+                    }
+                }catch(Exception exception)
+                {
+                    // No hay epsilon
+                    Console.WriteLine("Error");
                 }
-                
             }
             
         }

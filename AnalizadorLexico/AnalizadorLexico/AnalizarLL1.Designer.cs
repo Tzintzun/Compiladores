@@ -302,7 +302,6 @@ namespace AnalizadorLexico
             this.lbl_subtitle_3.Size = new System.Drawing.Size(112, 17);
             this.lbl_subtitle_3.TabIndex = 20;
             this.lbl_subtitle_3.Text = "Cadena / Sigma:";
-            this.lbl_subtitle_3.Visible = false;
             // 
             // AnalizarLL1
             // 
