@@ -53,12 +53,16 @@ namespace AnalizadorLexico
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(109, 61);
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Window;
+            this.button1.Location = new System.Drawing.Point(107, 52);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 35);
+            this.button1.Size = new System.Drawing.Size(161, 47);
             this.button1.TabIndex = 0;
             this.button1.Text = "Seleccionar archivo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
@@ -77,6 +81,7 @@ namespace AnalizadorLexico
             this.groupBox1.Controls.Add(this.txt_afd_id);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Location = new System.Drawing.Point(16, 11);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(284, 132);
@@ -88,7 +93,7 @@ namespace AnalizadorLexico
             // lbl_file_name
             // 
             this.lbl_file_name.AutoSize = true;
-            this.lbl_file_name.Location = new System.Drawing.Point(116, 99);
+            this.lbl_file_name.Location = new System.Drawing.Point(104, 102);
             this.lbl_file_name.Name = "lbl_file_name";
             this.lbl_file_name.Size = new System.Drawing.Size(30, 17);
             this.lbl_file_name.TabIndex = 4;
@@ -99,13 +104,13 @@ namespace AnalizadorLexico
             // 
             this.txt_afd_id.Location = new System.Drawing.Point(107, 24);
             this.txt_afd_id.Name = "txt_afd_id";
-            this.txt_afd_id.Size = new System.Drawing.Size(100, 22);
+            this.txt_afd_id.Size = new System.Drawing.Size(161, 22);
             this.txt_afd_id.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(132, 172);
+            this.label1.Location = new System.Drawing.Point(222, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 17);
             this.label1.TabIndex = 5;
@@ -114,7 +119,7 @@ namespace AnalizadorLexico
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(234, 172);
+            this.comboBox1.Location = new System.Drawing.Point(324, 172);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 7;
@@ -123,7 +128,7 @@ namespace AnalizadorLexico
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(104, 217);
+            this.label3.Location = new System.Drawing.Point(67, 214);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 17);
             this.label3.TabIndex = 8;
@@ -131,40 +136,48 @@ namespace AnalizadorLexico
             // 
             // txt_cadena
             // 
-            this.txt_cadena.Location = new System.Drawing.Point(234, 214);
+            this.txt_cadena.Location = new System.Drawing.Point(191, 214);
             this.txt_cadena.Name = "txt_cadena";
-            this.txt_cadena.Size = new System.Drawing.Size(390, 22);
+            this.txt_cadena.Size = new System.Drawing.Size(433, 22);
             this.txt_cadena.TabIndex = 9;
             this.txt_cadena.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Window;
             this.button2.Location = new System.Drawing.Point(630, 214);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 25);
+            this.button2.Size = new System.Drawing.Size(96, 25);
             this.button2.TabIndex = 10;
             this.button2.Text = "Analizar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(107, 258);
+            this.dataGridView1.Location = new System.Drawing.Point(70, 258);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(517, 183);
+            this.dataGridView1.Size = new System.Drawing.Size(554, 183);
             this.dataGridView1.TabIndex = 11;
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.Black;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Window;
             this.button3.Location = new System.Drawing.Point(298, 458);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 37);
+            this.button3.Size = new System.Drawing.Size(147, 37);
             this.button3.TabIndex = 12;
             this.button3.Text = "Guardar AFD";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // openFileDialog1
@@ -175,12 +188,15 @@ namespace AnalizadorLexico
             // 
             // btn_epsilon
             // 
+            this.btn_epsilon.BackColor = System.Drawing.SystemColors.MenuText;
+            this.btn_epsilon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_epsilon.ForeColor = System.Drawing.SystemColors.Window;
             this.btn_epsilon.Location = new System.Drawing.Point(16, 44);
             this.btn_epsilon.Name = "btn_epsilon";
             this.btn_epsilon.Size = new System.Drawing.Size(104, 29);
             this.btn_epsilon.TabIndex = 14;
             this.btn_epsilon.Text = "Epsilon";
-            this.btn_epsilon.UseVisualStyleBackColor = true;
+            this.btn_epsilon.UseVisualStyleBackColor = false;
             this.btn_epsilon.Click += new System.EventHandler(this.button5_Click);
             // 
             // groupBox2
@@ -190,7 +206,7 @@ namespace AnalizadorLexico
             this.groupBox2.Controls.Add(this.btn_epsilon);
             this.groupBox2.Location = new System.Drawing.Point(630, 258);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(136, 168);
+            this.groupBox2.Size = new System.Drawing.Size(136, 183);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Símbolos Especiales";
@@ -198,28 +214,35 @@ namespace AnalizadorLexico
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.SystemColors.MenuText;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.ForeColor = System.Drawing.SystemColors.Window;
             this.button5.Location = new System.Drawing.Point(16, 114);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(104, 29);
             this.button5.TabIndex = 16;
             this.button5.Text = "Menos";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.SystemColors.MenuText;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.Window;
             this.button4.Location = new System.Drawing.Point(16, 79);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(104, 29);
             this.button4.TabIndex = 15;
             this.button4.Text = "Más";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pAnalizadorLexico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(800, 537);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox2);

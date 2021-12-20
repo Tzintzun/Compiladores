@@ -105,5 +105,15 @@ namespace AnalizadorLexico
             textBox3.Text = "";
             this.label4.Visible = false;
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

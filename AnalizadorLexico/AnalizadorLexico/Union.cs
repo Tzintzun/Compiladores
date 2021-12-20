@@ -82,5 +82,10 @@ namespace AnalizadorLexico
             this.label3.Visible = false;
             this.label4.Visible = false;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

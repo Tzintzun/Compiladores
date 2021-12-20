@@ -82,18 +82,22 @@ namespace AnalizadorLexico
             // 
             this.txt_afd_id.Location = new System.Drawing.Point(119, 36);
             this.txt_afd_id.Name = "txt_afd_id";
-            this.txt_afd_id.Size = new System.Drawing.Size(100, 22);
+            this.txt_afd_id.Size = new System.Drawing.Size(163, 22);
             this.txt_afd_id.TabIndex = 7;
             this.txt_afd_id.TextChanged += new System.EventHandler(this.txt_afd_id_TextChanged);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Window;
             this.button1.Location = new System.Drawing.Point(121, 73);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 43);
             this.button1.TabIndex = 5;
             this.button1.Text = "Seleccionar archivo del AFD";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
@@ -110,18 +114,22 @@ namespace AnalizadorLexico
             // 
             this.txt_exp.Location = new System.Drawing.Point(211, 226);
             this.txt_exp.Name = "txt_exp";
-            this.txt_exp.Size = new System.Drawing.Size(470, 22);
+            this.txt_exp.Size = new System.Drawing.Size(488, 22);
             this.txt_exp.TabIndex = 9;
             this.txt_exp.TextChanged += new System.EventHandler(this.txt_exp_TextChanged);
             // 
             // btn_eval
             // 
-            this.btn_eval.Location = new System.Drawing.Point(79, 281);
+            this.btn_eval.BackColor = System.Drawing.Color.Black;
+            this.btn_eval.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_eval.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
+            this.btn_eval.ForeColor = System.Drawing.SystemColors.Window;
+            this.btn_eval.Location = new System.Drawing.Point(71, 281);
             this.btn_eval.Name = "btn_eval";
-            this.btn_eval.Size = new System.Drawing.Size(92, 44);
+            this.btn_eval.Size = new System.Drawing.Size(100, 45);
             this.btn_eval.TabIndex = 10;
             this.btn_eval.Text = "Evaluar";
-            this.btn_eval.UseVisualStyleBackColor = true;
+            this.btn_eval.UseVisualStyleBackColor = false;
             this.btn_eval.Click += new System.EventHandler(this.btn_eval_Click);
             // 
             // txt_result
@@ -170,6 +178,7 @@ namespace AnalizadorLexico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
             this.Controls.Add(this.label3);
