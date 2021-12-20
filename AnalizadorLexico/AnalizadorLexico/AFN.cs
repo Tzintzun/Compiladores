@@ -17,8 +17,8 @@ namespace AnalizadorLexico
             j = -1;
             ConjI = new HashSet<Estado>();
             ConjI.Clear();
-            TransicionesAFD = new int[CardAlf + 1];
-            for (int k = 0; k <= CardAlf; k++)
+            TransicionesAFD = new int[257];
+            for (int k = 0; k <= 256; k++)
             {
                 TransicionesAFD[k] = -1;
             }
@@ -397,7 +397,7 @@ namespace AnalizadorLexico
                             existe = true;
 
                             r = IndiceCaracter(ArrAlfabeto, c);
-                            Ij.TransicionesAFD[r] = I.j;
+                            Ij.TransicionesAFD[(int)c] = I.j;
                             break;
                         }
                     }
@@ -406,7 +406,7 @@ namespace AnalizadorLexico
                     {
                         Ik.j = j;
                         r = IndiceCaracter(ArrAlfabeto, c);
-                        Ij.TransicionesAFD[r] = Ik.j;
+                        Ij.TransicionesAFD[(int)c] = Ik.j;
                         EdosAFD.Add(Ik);
                         EdosSinAnalizar.Enqueue(Ik);
                         j++;
@@ -424,13 +424,13 @@ namespace AnalizadorLexico
                 {
                     foreach (Estado EdoAcept in ConjAux)
                     {
-                        I.TransicionesAFD[CardAlfabeto] = EdoAcept.Token;
+                        I.TransicionesAFD[256] = EdoAcept.Token;
                         break;
                     }
                 }
                 else
                 {
-                    I.TransicionesAFD[CardAlfabeto] = -1;
+                    I.TransicionesAFD[256] = -1;
                 }
             }
             AFD AutFD = new AFD
@@ -456,15 +456,19 @@ namespace AnalizadorLexico
             AutFD.TransicionesAFD = new int[EdosAFD.Count, CardAlfabeto + 1];
 
             foreach (ConjIj I in EdosAFD)
-            {
-                for (int columna = 0; columna <= CardAlfabeto; columna++)
+            {   
+
+                for (int columna = 0; columna < CardAlfabeto; columna++)
                 {
-                    AutFD.TransicionesAFD[I.j, columna] = I.TransicionesAFD[columna];
-                    if (columna != CardAlfabeto)
-                        AutFD.TablaAFD[I.j, AutFD.ArrAlfabeto[columna]] = I.TransicionesAFD[columna];
-                    else
-                        AutFD.TablaAFD[I.j, 256] = I.TransicionesAFD[columna];
+                    Console.WriteLine((int)AutFD.ArrAlfabeto[columna]);
+                    Console.WriteLine(CardAlfabeto);
+                    AutFD.TransicionesAFD[I.j, columna] = I.TransicionesAFD[AutFD.ArrAlfabeto[columna]];
+                    //if (columna != CardAlfabeto)
+                        AutFD.TablaAFD[I.j, AutFD.ArrAlfabeto[columna]] = I.TransicionesAFD[AutFD.ArrAlfabeto[columna]];
+                    //else
+                        
                 }
+                AutFD.TablaAFD[I.j, 256] = I.TransicionesAFD[256];
             }
 
             AutFD.NumEstados = EdosAFD.Count;

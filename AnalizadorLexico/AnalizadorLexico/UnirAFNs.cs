@@ -16,6 +16,7 @@ namespace AnalizadorLexico
         {
             InitializeComponent();
             mostrarAFN();
+            dataGridView1.AllowUserToAddRows = false;
         }
 
         public void mostrarAFN()
