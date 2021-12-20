@@ -12,6 +12,8 @@ namespace AnalizadorLexico
 {
     public partial class AnalisarLL1 : Form
     {
+        AnalizadorLL1 analizador;
+        string path_file;
         public AnalisarLL1()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace AnalizadorLexico
                 return;
             }
 
-            AnalizadorLL1 analizador = new AnalizadorLL1(gramatica.Text);
+             analizador = new AnalizadorLL1(gramatica.Text);
 
             if (analizador.crearTablaLL1())
             {
@@ -43,7 +45,7 @@ namespace AnalizadorLexico
                 tablaTerminales.Rows.Clear();
                 tablaTerminales.AllowUserToOrderColumns = false;
                 tablaTerminales.RowHeadersVisible = false;
-
+                tablaTerminales.AllowUserToAddRows = false;
                 tablaNTerminales.Columns.Add("noTerminal", "Simbolos");
                 for(int i = 0; i < analizador.vn.Length; i++)
                 {
@@ -98,6 +100,100 @@ namespace AnalizadorLexico
                 
             }
             
+        }
+
+        private void yylexBoton_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                path_file = openFileDialog1.FileName;
+                analizador.setLexico(path_file);
+            }
+            else
+            {
+                MessageBox.Show("Selecciones el archivo donde se encuentra el AFD", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+        }
+
+        private void botonAnalisisRapido_Click(object sender, EventArgs e)
+        {
+            analisisAFD.Rows.Clear();
+            analisisAFD.Columns.Clear();
+            analisisAFD.RowHeadersVisible = false;
+            analisisAFD.Columns.Add("Simbolo","Simbolo");
+            analisisAFD.Columns.Add("Token", "Token");
+            AnalizLexico l = new AnalizLexico(path_file, 100);
+            int filas;
+            if (textBox1.Text.Equals("") || textBox1.Text == null)
+            {
+                MessageBox.Show("Cadena de entrada vacia","ERROR");
+                return;
+            }
+            l.SetSigma(textBox1.Text);
+            int token = l.yylex();
+            while(token != SimbolosEspeciales.FIN)
+            {
+                analisisAFD.Rows.Add();
+                filas = analisisAFD.Rows.Count;
+
+                analisisAFD.Rows[filas - 2].Cells[0].Value = token;
+                analisisAFD.Rows[filas - 2].Cells[1].Value = l.Lexema;
+                token = l.yylex();
+            }
+            analisisAFD.Rows.Add();
+             filas = analisisAFD.Rows.Count;
+
+            analisisAFD.Rows[filas - 2].Cells[0].Value = token;
+            analisisAFD.Rows[filas - 2].Cells[1].Value = l.Lexema;
+        }
+
+        private void analisarConLL1_Click(object sender, EventArgs e)
+        {
+            for(int i = 0; i < tablaTerminales.Rows.Count; i++)
+            {
+                if(tablaTerminales.Rows[i].Cells[1].Value.Equals("") || tablaTerminales.Rows[i].Cells[1].Value == null)
+                {
+                    MessageBox.Show("Tienes que asignar todos los Tokens a la tabal de terminales", "ERROR");
+                    return;
+                }
+                try
+                {
+                    int token = Int32.Parse((string)tablaTerminales.Rows[i].Cells[1].Value);
+                    foreach(SimbTerm s in analizador.vt)
+                    {
+                        if (s.simbolo.Equals(tablaTerminales.Rows[i].Cells[0].Value))
+                        {
+                            s.valToken = token;
+                            break;
+                        }
+                    }
+                    
+                    
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Token mal escrito", "ERROR");
+                    return;
+                }
+            }
+
+            if(textBox1.Text.Equals("") || textBox1.Text == null)
+            {
+                MessageBox.Show("Ingresa una cadena", "ERROR");
+                return;
+            }
+
+            if(analizador.analizarSintacticamente(textBox1.Text, procesosAnalisis))
+            {
+                MessageBox.Show("Cadena Correcta", "Succes");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Cadena INCORRECTA", "ERROR");
+                return;
+            }
         }
     }
 }

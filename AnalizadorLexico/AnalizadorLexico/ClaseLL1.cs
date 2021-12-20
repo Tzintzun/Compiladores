@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 namespace AnalizadorLexico
 {
     class SimbTerm
@@ -16,6 +16,23 @@ namespace AnalizadorLexico
             valToken = token;
         }
         public SimbTerm()
+        {
+            simbolo = "";
+            valToken = -1;
+        }
+    }
+    class Simbolo
+    {
+        public string simbolo;
+        public int valToken;
+        public bool isTerminal;
+        public Simbolo(string simb,bool isTerminal, int token)
+        {
+            simbolo = simb;
+            valToken = token;
+            this.isTerminal = isTerminal;
+        }
+        public Simbolo()
         {
             simbolo = "";
             valToken = -1;
@@ -114,6 +131,129 @@ namespace AnalizadorLexico
                 }
             }
             return resultadoAnalisis;
+        }
+
+
+        public bool analizarSintacticamente(string cad,DataGridView tabla)
+        {
+            int  tokenyylex,renglon = -1,columna = -1,accion=-1;
+            Stack<Simbolo> pila = new Stack<Simbolo>();
+            pila.Clear();
+            sigma = cad;
+            int numeroEstados = 0;
+            string cadena = "";
+            lexGram.SetSigma(sigma);
+            Simbolo extraerSimbolo;
+            Simbolo simbolo = new Simbolo(vn[0],false,-1);
+            pila.Push(simbolo);
+            tabla.Rows.Clear();
+            tabla.Columns.Clear();
+            tabla.RowHeadersVisible = false;
+            tabla.AllowUserToAddRows = false;
+
+            tabla.Columns.Add("pila", "Pila");
+            tabla.Columns.Add("cadena", "Cadena");
+            tabla.Columns.Add("accion", "Accion");
+            tokenyylex = lexGram.yylex();
+
+            while(true)
+            {
+                if (pila.Count == 0 && tokenyylex == 0)
+                {
+                    return true;
+                }else if(pila.Count == 0 && tokenyylex != 0)
+                {
+                    return false;
+                }
+                Simbolo[] aux = pila.ToArray<Simbolo>();
+                Array.Reverse(aux);
+                tabla.Rows.Add();
+                string cadenaPila = "";
+                foreach (Simbolo sim in aux)
+                {
+                    cadenaPila += sim.simbolo + " ";
+                }
+                tabla.Rows[numeroEstados].Cells[0].Value = cadenaPila;
+                tabla.Rows[numeroEstados].Cells[1].Value = cadena.Length > 0 ? cad.Replace(cadena, " ") : cad;
+                string accionesTabla = "";
+                extraerSimbolo = pila.Pop();
+                
+                if (extraerSimbolo.isTerminal)
+                {
+                    if (extraerSimbolo.valToken == tokenyylex)
+                    {
+                        cadena += lexGram.Lexema;
+                        tokenyylex = lexGram.yylex();
+                        tabla.Rows[numeroEstados].Cells[2].Value = "POP";
+                        numeroEstados++;
+                        continue;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                renglon = Array.IndexOf(vn, extraerSimbolo.simbolo);
+
+                for (int i = 0; i < vt.Length; i++)
+                {
+                    if (vt[i].valToken == tokenyylex)
+                    {
+                        columna = i;
+                        break;
+                    }
+                }
+                if (renglon >= 0 || columna >= 0)
+                {
+                    accion = tablaLL1[renglon, columna];
+                }
+
+                
+
+                if (accion != -1)
+                {
+                    foreach (Nodo nod in DesRecG.arrReglas[accion - 1].listaLadoDerecho)
+                    {
+                        accionesTabla += nod.simbolo + " ";
+                    }
+                    tabla.Rows[numeroEstados].Cells[2].Value = accionesTabla;
+                    numeroEstados++;
+                    for (int i = DesRecG.arrReglas[accion - 1].listaLadoDerecho.Count-1; i >= 0; i--)
+                    {
+                        int TokenActual = -1;
+                        Nodo n = DesRecG.arrReglas[accion - 1].listaLadoDerecho[i];
+                        if (n.simbolo.Equals("epsilon"))
+                        {
+                            continue;
+                        }
+                        if (n.terminal)
+                        {
+                            
+                            foreach(SimbTerm st in vt)
+                            {
+                                if (st.simbolo.Equals(n.simbolo))
+                                {
+                                    TokenActual = st.valToken;
+                                    break;
+                                }
+                            }
+
+                            
+                        }
+                        pila.Push(new Simbolo(n.simbolo,n.terminal,TokenActual));
+
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+
+            } 
+
+
+            
         }
     }
 }

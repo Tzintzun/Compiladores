@@ -34,9 +34,20 @@ namespace AnalizadorLexico
             this.tablaNTerminales = new System.Windows.Forms.DataGridView();
             this.tablaTerminales = new System.Windows.Forms.DataGridView();
             this.tablaLL1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.yylexBoton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.botonAnalisisRapido = new System.Windows.Forms.Button();
+            this.analisisAFD = new System.Windows.Forms.DataGridView();
+            this.procesosAnalisis = new System.Windows.Forms.DataGridView();
+            this.analisarConLL1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaNTerminales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTerminales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaLL1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.analisisAFD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.procesosAnalisis)).BeginInit();
             this.SuspendLayout();
             // 
             // gramatica
@@ -80,11 +91,94 @@ namespace AnalizadorLexico
             this.tablaLL1.Size = new System.Drawing.Size(430, 268);
             this.tablaLL1.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(39, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "No terminales";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(260, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Terminales";
+            // 
+            // yylexBoton
+            // 
+            this.yylexBoton.Location = new System.Drawing.Point(520, 132);
+            this.yylexBoton.Name = "yylexBoton";
+            this.yylexBoton.Size = new System.Drawing.Size(75, 43);
+            this.yylexBoton.TabIndex = 7;
+            this.yylexBoton.Text = "Agregar AFD";
+            this.yylexBoton.UseVisualStyleBackColor = true;
+            this.yylexBoton.Click += new System.EventHandler(this.yylexBoton_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(631, 132);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 8;
+            // 
+            // botonAnalisisRapido
+            // 
+            this.botonAnalisisRapido.Location = new System.Drawing.Point(631, 158);
+            this.botonAnalisisRapido.Name = "botonAnalisisRapido";
+            this.botonAnalisisRapido.Size = new System.Drawing.Size(137, 23);
+            this.botonAnalisisRapido.TabIndex = 9;
+            this.botonAnalisisRapido.Text = "Comprobar AFD";
+            this.botonAnalisisRapido.UseVisualStyleBackColor = true;
+            this.botonAnalisisRapido.Click += new System.EventHandler(this.botonAnalisisRapido_Click);
+            // 
+            // analisisAFD
+            // 
+            this.analisisAFD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.analisisAFD.Location = new System.Drawing.Point(837, 132);
+            this.analisisAFD.Name = "analisisAFD";
+            this.analisisAFD.Size = new System.Drawing.Size(141, 150);
+            this.analisisAFD.TabIndex = 10;
+            // 
+            // procesosAnalisis
+            // 
+            this.procesosAnalisis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.procesosAnalisis.Location = new System.Drawing.Point(486, 312);
+            this.procesosAnalisis.Name = "procesosAnalisis";
+            this.procesosAnalisis.Size = new System.Drawing.Size(492, 268);
+            this.procesosAnalisis.TabIndex = 11;
+            // 
+            // analisarConLL1
+            // 
+            this.analisarConLL1.Location = new System.Drawing.Point(520, 258);
+            this.analisarConLL1.Name = "analisarConLL1";
+            this.analisarConLL1.Size = new System.Drawing.Size(139, 23);
+            this.analisarConLL1.TabIndex = 12;
+            this.analisarConLL1.Text = "Analisar cadena";
+            this.analisarConLL1.UseVisualStyleBackColor = true;
+            this.analisarConLL1.Click += new System.EventHandler(this.analisarConLL1_Click);
+            // 
             // AnalisarLL1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 621);
+            this.ClientSize = new System.Drawing.Size(1025, 621);
+            this.Controls.Add(this.analisarConLL1);
+            this.Controls.Add(this.procesosAnalisis);
+            this.Controls.Add(this.analisisAFD);
+            this.Controls.Add(this.botonAnalisisRapido);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.yylexBoton);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tablaLL1);
             this.Controls.Add(this.tablaTerminales);
             this.Controls.Add(this.tablaNTerminales);
@@ -96,6 +190,8 @@ namespace AnalizadorLexico
             ((System.ComponentModel.ISupportInitialize)(this.tablaNTerminales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTerminales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaLL1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.analisisAFD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.procesosAnalisis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,5 +204,14 @@ namespace AnalizadorLexico
         private System.Windows.Forms.DataGridView tablaNTerminales;
         private System.Windows.Forms.DataGridView tablaTerminales;
         private System.Windows.Forms.DataGridView tablaLL1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button yylexBoton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button botonAnalisisRapido;
+        private System.Windows.Forms.DataGridView analisisAFD;
+        private System.Windows.Forms.DataGridView procesosAnalisis;
+        private System.Windows.Forms.Button analisarConLL1;
     }
 }
