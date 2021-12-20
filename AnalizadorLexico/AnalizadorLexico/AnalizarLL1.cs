@@ -129,34 +129,40 @@ namespace AnalizadorLexico
 
         private void botonAnalisisRapido_Click(object sender, EventArgs e)
         {
-            analisisAFD.Rows.Clear();
-            analisisAFD.Columns.Clear();
-            analisisAFD.RowHeadersVisible = false;
-            analisisAFD.Columns.Add("Lexema", "Lexema");
-            analisisAFD.Columns.Add("Token", "Token");
-            AnalizLexico l = new AnalizLexico(path_file, 100);
-            int filas;
-            if (txt_sigma.Text.Equals("") || txt_sigma.Text == null)
+            if (path_file != null && !path_file.Equals(""))
             {
-                MessageBox.Show("Cadena de entrada vacia","ERROR");
-                return;
-            }
-            l.SetSigma(txt_sigma.Text);
-            int token = l.yylex();
-            while(token != SimbolosEspeciales.FIN)
-            {
+                analisisAFD.Rows.Clear();
+                analisisAFD.Columns.Clear();
+                analisisAFD.RowHeadersVisible = false;
+                analisisAFD.Columns.Add("Lexema", "Lexema");
+                analisisAFD.Columns.Add("Token", "Token");
+                AnalizLexico l = new AnalizLexico(path_file, 100);
+                int filas;
+                if (txt_sigma.Text.Equals("") || txt_sigma.Text == null)
+                {
+                    MessageBox.Show("Cadena de entrada vacia", "ERROR");
+                    return;
+                }
+                l.SetSigma(txt_sigma.Text);
+                int token = l.yylex();
+                while (token != SimbolosEspeciales.FIN)
+                {
+                    analisisAFD.Rows.Add();
+                    filas = analisisAFD.Rows.Count;
+
+                    analisisAFD.Rows[filas - 2].Cells[0].Value = l.Lexema;
+                    analisisAFD.Rows[filas - 2].Cells[1].Value = token;
+                    token = l.yylex();
+                }
                 analisisAFD.Rows.Add();
                 filas = analisisAFD.Rows.Count;
 
-                analisisAFD.Rows[filas - 2].Cells[0].Value = l.Lexema;
-                analisisAFD.Rows[filas - 2].Cells[1].Value = token;
-                token = l.yylex();
+                analisisAFD.Rows[filas - 2].Cells[0].Value = token;
+                analisisAFD.Rows[filas - 2].Cells[1].Value = l.Lexema;
+            }else
+            {
+                MessageBox.Show("Primero tienes que seleccionar un archivo AFD", "ERROR");
             }
-            analisisAFD.Rows.Add();
-             filas = analisisAFD.Rows.Count;
-
-            analisisAFD.Rows[filas - 2].Cells[0].Value = token;
-            analisisAFD.Rows[filas - 2].Cells[1].Value = l.Lexema;
         }
 
         private void analisarConLL1_Click(object sender, EventArgs e)
@@ -166,6 +172,11 @@ namespace AnalizadorLexico
                 if(tablaTerminales.Rows[i].Cells[1].Value == null || tablaTerminales.Rows[i].Cells[1].Value.Equals(""))
                 {
                     MessageBox.Show("Tienes que asignar todos los Tokens a la tabal de terminales", "ERROR");
+                    return;
+                }
+                if (path_file == null || path_file.Equals(""))
+                {
+                    MessageBox.Show("Primero tienes que seleccionar un archivo AFD", "ERROR");
                     return;
                 }
                 try
