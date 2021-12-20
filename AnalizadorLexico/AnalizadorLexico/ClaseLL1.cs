@@ -48,7 +48,7 @@ namespace AnalizadorLexico
         public SimbTerm[] vt;
         public string[] vt2;
         public string[] vn;
-        const string ArchAFDLexiGramGram = "C:\\Users\\david\\Desktop\\Semestre 7\\Compiladores\\TxtGram_Gram.txt";
+        private string ArchAFDLexiGramGram = System.IO.Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.Parent.FullName + "\\TxtGram_Gram.txt";
 
         public AnalizadorLL1(string cadGramatica, string ArchAFDLexic)
         {

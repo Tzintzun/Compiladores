@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace AnalizadorLexico
 {
-    public partial class AnalisarLL1 : Form
+    public partial class AnalizarLL1 : Form
     {
         AnalizadorLL1 analizador;
         string path_file;
-        public AnalisarLL1()
+        public AnalizarLL1()
         {
             InitializeComponent();
         }
@@ -121,7 +121,7 @@ namespace AnalizadorLexico
             analisisAFD.Rows.Clear();
             analisisAFD.Columns.Clear();
             analisisAFD.RowHeadersVisible = false;
-            analisisAFD.Columns.Add("Simbolo","Simbolo");
+            analisisAFD.Columns.Add("Lexema", "Lexema");
             analisisAFD.Columns.Add("Token", "Token");
             AnalizLexico l = new AnalizLexico(path_file, 100);
             int filas;
@@ -137,8 +137,8 @@ namespace AnalizadorLexico
                 analisisAFD.Rows.Add();
                 filas = analisisAFD.Rows.Count;
 
-                analisisAFD.Rows[filas - 2].Cells[0].Value = token;
-                analisisAFD.Rows[filas - 2].Cells[1].Value = l.Lexema;
+                analisisAFD.Rows[filas - 2].Cells[0].Value = l.Lexema;
+                analisisAFD.Rows[filas - 2].Cells[1].Value = token;
                 token = l.yylex();
             }
             analisisAFD.Rows.Add();
@@ -194,6 +194,21 @@ namespace AnalizadorLexico
                 MessageBox.Show("Cadena INCORRECTA", "ERROR");
                 return;
             }
+        }
+        
+        private void analisisAFD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_gram_Click(object sender, EventArgs e)
+        {
+            gramatica.Text = "E-> T Ep; Ep -> mas T Ep | menos T Ep| epsilon; T-> F Tp; Tp-> prod F Tp | div F Tp| epsilon; F-> parI E parD | num;";
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            gramatica.Text = "";
         }
     }
 }
