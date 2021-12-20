@@ -46,6 +46,7 @@ namespace AnalizadorLexico
             this.label3 = new System.Windows.Forms.Label();
             this.btn_reset = new System.Windows.Forms.Button();
             this.btn_gram = new System.Windows.Forms.Button();
+            this.lbl_file_name = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaNTerminales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTerminales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaLL1)).BeginInit();
@@ -220,11 +221,22 @@ namespace AnalizadorLexico
             this.btn_gram.UseVisualStyleBackColor = true;
             this.btn_gram.Click += new System.EventHandler(this.btn_gram_Click);
             // 
+            // lbl_file_name
+            // 
+            this.lbl_file_name.AutoSize = true;
+            this.lbl_file_name.Location = new System.Drawing.Point(645, 216);
+            this.lbl_file_name.Name = "lbl_file_name";
+            this.lbl_file_name.Size = new System.Drawing.Size(30, 17);
+            this.lbl_file_name.TabIndex = 16;
+            this.lbl_file_name.Text = "File";
+            this.lbl_file_name.Visible = false;
+            // 
             // AnalizarLL1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1367, 764);
+            this.Controls.Add(this.lbl_file_name);
             this.Controls.Add(this.btn_gram);
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.label3);
@@ -274,5 +286,6 @@ namespace AnalizadorLexico
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_reset;
         private System.Windows.Forms.Button btn_gram;
+        private System.Windows.Forms.Label lbl_file_name;
     }
 }

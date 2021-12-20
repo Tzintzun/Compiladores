@@ -107,12 +107,17 @@ namespace AnalizadorLexico
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 path_file = openFileDialog1.FileName;
+                string[] parts_parh_file = path_file.Split('\\');
+                string name_file = parts_parh_file[parts_parh_file.Length - 1];
+                
                 analizador.setLexico(path_file);
+                lbl_file_name.Text = name_file;
+                lbl_file_name.Visible = true;
             }
             else
             {
-                MessageBox.Show("Selecciones el archivo donde se encuentra el AFD", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+                MessageBox.Show("Selecciona el archivo donde se encuentra el AFD", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lbl_file_name.Visible = false;
             }
         }
 
@@ -152,7 +157,7 @@ namespace AnalizadorLexico
         {
             for(int i = 0; i < tablaTerminales.Rows.Count; i++)
             {
-                if(tablaTerminales.Rows[i].Cells[1].Value.Equals("") || tablaTerminales.Rows[i].Cells[1].Value == null)
+                if(tablaTerminales.Rows[i].Cells[1].Value == null || tablaTerminales.Rows[i].Cells[1].Value.Equals(""))
                 {
                     MessageBox.Show("Tienes que asignar todos los Tokens a la tabal de terminales", "ERROR");
                     return;
